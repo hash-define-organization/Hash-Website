@@ -1,0 +1,37 @@
+{
+  "name": "hdv2",
+  "version": "1.0.0",
+  "description": "#Define Website v2 Static Site, PUG and SASS",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hash-define-organization/website-update.git"
+  },
+  "keywords": [
+    "gulp",
+    "sass"
+  ],
+  "author": "winoffrg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hash-define-organization/website-update/issues"
+  },
+  "homepage": "https://github.com/hash-define-organization/website-update#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.0",
+    "bourbon": "^7.0.0",
+    "browser-sync": "^2.27.7",
+    "cssnano": "^5.0.11",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.43.4"
+  }
+}
