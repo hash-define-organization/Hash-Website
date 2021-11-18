@@ -35,7 +35,6 @@
     .right-container {        
         display: flex;
         margin: 0 2rem;
-        overflow: hidden;
 
         .navigationBar {
             display: flex;
@@ -66,7 +65,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                // position: relative;
+                position: relative;
                 
                 button {
                     background: none;
@@ -92,12 +91,13 @@
 
                     &::after {
                         // display: none;
-                        position: absolute;
                         content: attr(aria-label);
+                        position: absolute;
                         width: max-content;
                         font-size: 0.8rem;
                         color: var(--background);
                         background: hsl(var(--clr-accent));
+                        // left: 0.1rem;
                         right: -1.1rem;
                         top: 120%;
                         margin: 0 auto;
@@ -107,7 +107,6 @@
                         transform: scale(0);
                         transform-origin: 80% 0%;
                         transition: transform 100ms linear 100ms, opacity 100ms linear;
-                        z-index: 100;
                     }
 
                     &:hover, &:focus-visible {
@@ -125,15 +124,15 @@
                 }
 
                 // TODO: Add wave ripple effect
-                // .wave {
-                //     position: absolute;
-                //     background: chartreuse;
-                //     width: 1px;
-                //     height: 1px;
-                //     border-radius: 50%;
-                //     z-index: -1;
-                //     box-shadow: 0 0 0 0 #212121;
-                // }
+                .wave {
+                    position: absolute;
+                    background: chartreuse;
+                    width: 1px;
+                    height: 1px;
+                    border-radius: 50%;
+                    z-index: -1;
+                    box-shadow: 0 0 0 0 #212121;
+                }
             }
         }
     }
