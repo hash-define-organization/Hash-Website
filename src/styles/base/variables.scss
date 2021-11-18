@@ -1,0 +1,32 @@
+:root {
+
+    /*     Common Colors     */
+    --common-color: #00a0e9;
+
+    /*     Font Size        */
+    --fs-900: 9.375rem;
+    --fs-800: 6.25rem;
+    --fs-700: 3.5rem;
+    --fs-600: 2rem;
+    --fs-500: 1.75rem;
+    --fs-400: 1.125rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+
+    /*     Font Color       */
+    --clr-white: 0 0% 100%;
+}
+
+.theme--light {
+    --background: white;
+    --clr-accent: 230 35% 7%; 
+    --clr-hover: 230 35% 7%; 
+    --clr-dark: 231 77% 90%;
+}
+
+.theme--dark {
+    --background: black;
+    --clr-accent: 231 77% 90%;
+    --clr-hover: 230 35% 7%;
+    --clr-light: 230 35% 7%; 
+}

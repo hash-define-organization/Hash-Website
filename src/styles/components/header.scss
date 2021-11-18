@@ -1,0 +1,153 @@
+.header {
+
+    display: flex;
+    height: 4rem;
+    background: var(--background);
+    color: hsl( var(--clr-accent) / 0.7 );
+    font-size: var(--fs-400);
+    font-weight: 600;
+    justify-content: space-between;
+
+    .left-container {
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 2rem;
+
+        .logo-wrapper {            
+            display: flex;
+            font-size: var(--fs-500);
+            font-weight: 800;
+
+            .logo {
+                width: 3rem;
+                height: 3rem;
+            }
+
+            .title {
+                width: 12rem;
+                height: 4rem;
+            }
+        }
+    }
+
+    .right-container {        
+        display: flex;
+        margin: 0 2rem;
+        overflow: hidden;
+
+        .navigationBar {
+            display: flex;
+
+
+            .navBtn__wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 1rem;
+
+                .navBtn__link {
+                    text-decoration: none;
+                    color: inherit;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: hsl(var(--clr-accent));
+                    }
+                }
+            }
+        }
+
+        .theme-switch {
+            display: flex;
+            
+            .switch-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                // position: relative;
+                
+                button {
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0.5rem;
+                    opacity: 0.7;
+                    border-radius: 50%;
+                    position: relative;
+                    
+                    svg {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        fill: hsl(var(--clr-accent));
+
+                        .toggle-circle {
+                            transition: transform 250ms ease-out;
+                        }
+                    }
+
+                    &::after {
+                        // display: none;
+                        position: absolute;
+                        content: attr(aria-label);
+                        width: max-content;
+                        font-size: 0.8rem;
+                        color: var(--background);
+                        background: hsl(var(--clr-accent));
+                        right: -1.1rem;
+                        top: 120%;
+                        margin: 0 auto;
+                        padding: 0.3rem 0.6rem;
+                        border-radius: 5px;
+                        opacity: 0;
+                        transform: scale(0);
+                        transform-origin: 80% 0%;
+                        transition: transform 100ms linear 100ms, opacity 100ms linear;
+                        z-index: 100;
+                    }
+
+                    &:hover, &:focus-visible {
+                        opacity: 1;
+                        background: hsl(var(--clr-accent) / 0.2);
+                    }
+
+                    &:hover::after, &:focus-visible::after {
+                        display: block;
+                        opacity: 0.8;
+                        transform: scale(1);
+                        transition: transform 70ms linear, opacity 100ms linear;
+                    }
+
+                }
+
+                // TODO: Add wave ripple effect
+                // .wave {
+                //     position: absolute;
+                //     background: chartreuse;
+                //     width: 1px;
+                //     height: 1px;
+                //     border-radius: 50%;
+                //     z-index: -1;
+                //     box-shadow: 0 0 0 0 #212121;
+                // }
+            }
+        }
+    }
+}
+
+.theme--light svg .toggle-circle {
+    transform: translateX(-15%);
+}
+
+.theme--light svg .toggle-sun {
+    transform: rotate(0.5turn);
+}
+
+svg .toggle-sun {
+    transform-origin: center center;
+    transition: transform 500ms cubic-bezier(0.11, 0.14, 0.29, 1.32);
+}

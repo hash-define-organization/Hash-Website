@@ -1,12 +1,7 @@
-body{
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #333;
-    background-color: #fff;
-}
+@use './base/index' as index;
+@use './pages/index' as pages;
+@use './components/index' as components;
 
-h1{
-    color: green;
+body{
+    background: var(--background);
 }

@@ -1,0 +1,16 @@
+section {
+    
+    height: 400px;
+    display: flex;
+
+    .left-sec {
+        width: 50%;
+        height: 100%;
+    }
+    .right-sec { 
+        width: 50%;
+        height: inherit;
+        background-image: url("https://nextui.org/gradient-right-dark.svg");
+        background-size: cover;
+    }
+}
