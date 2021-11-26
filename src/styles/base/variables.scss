@@ -19,14 +19,18 @@
 
 .theme--light {
     --background: white;
+    --foreground: black;
     --clr-accent: 230 35% 7%; 
     --clr-hover: 230 35% 7%; 
     --clr-dark: 231 77% 90%;
+    --clr-light: 0 0% 0%;
 }
 
 .theme--dark {
     --background: black;
+    --foreground: white;
     --clr-accent: 231 77% 90%;
     --clr-hover: 230 35% 7%;
-    --clr-light: 230 35% 7%; 
+    --clr-dark: 230 35% 7%; 
+    --clr-light: 360 100% 100%;
 }

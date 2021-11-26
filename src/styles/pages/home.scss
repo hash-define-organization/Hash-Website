@@ -1,16 +1,99 @@
-section {
-    
-    height: 400px;
-    display: flex;
+@use './base/index' as index;
 
-    .left-sec {
-        width: 50%;
-        height: 100%;
+body{
+    background: var(--background);
+    color: var(--foreground);
+    font-size: 1rem;
+    // min-width: 500px !important;
+        
+    .master {
+        height: 400px;
+        width: calc(100% - 80px);
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .bg-gradient {
+            position: absolute;
+            // top: 80%;
+            left: -10%;
+            z-index: 1;
+            transform: scale(0.5);
+        }
+    
+        .left-sec {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-wrap: wrap;
+            
+            h2 {
+                font-weight: 800;
+                font-size: calc(1rem + 2vw);
+                background: linear-gradient(135deg, #CB5EEE 0%, #4BE1EC 100%);
+                background-clip: text;
+                color: transparent;
+                letter-spacing: 0.01rem;
+                word-spacing: 0.001rem;
+                text-transform: uppercase;
+            }
+            
+            h2:hover{
+                transition: all 1000ms ease-in-out;
+                background: linear-gradient(310deg,#cb5eee,#4be1ec);
+                background-clip: text;
+            }
+    
+            p {
+                color: hsl(var(--clr-accent));
+            }
+        }
+    
+        .right-sec { 
+            width: 60%;
+        }
     }
-    .right-sec { 
-        width: 50%;
-        height: inherit;
-        background-image: url("https://nextui.org/gradient-right-dark.svg");
-        background-size: cover;
+
+
+    .social {
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .bg-gradient {
+            position: absolute;
+            // top: 80%;
+            left: -10%;
+            z-index: -1;
+            transform: scale(0.5);
+        }
+
+        h2 {
+            font-weight: 800;
+            font-size: 3rem;
+            background: linear-gradient(135deg, #D6FF7F 0%, #00B3CC 100%);
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 0.01rem;
+            word-spacing: 0.001rem;
+            text-transform: uppercase;
+        }
+        .social-wrapper {
+            display: flex;
+    
+            .social-item {
+    
+                img {
+                    height: 200px;
+                    width: 200px;
+                }
+            }
+        }
     }
 }

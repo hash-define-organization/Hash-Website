@@ -1,0 +1,12 @@
+.block-gap__v--top(style="--flow-space: 2rem")
+.subscribe-promotion.noselect
+    .subscribe-promotion__wrapper
+        .subscribe-promotion__title
+            h2 Subscribe to our mailing list
+            //- span 
+                img.sendMailIcon(src="./assets/images/send.svg", alt="Send Mail Icon")
+        .subscribe__form
+            input.subscribe__form--email#email(type='email' name='EMAIL' placeholder='Enter your Email Address' spellcheck='false')
+            button.subscribe__form--submit.uppercase(type='submit') Submit
+            label.alert-message(for='email')
+                span.subscribe__form--submit-message.uppercase

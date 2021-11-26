@@ -1,7 +1,2 @@
-@use './base/index' as index;
 @use './pages/index' as pages;
 @use './components/index' as components;
-
-body{
-    background: var(--background);
-}

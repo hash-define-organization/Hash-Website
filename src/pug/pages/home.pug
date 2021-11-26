@@ -13,8 +13,28 @@ html(lang="en")
         .notification__wrapper
             .notification-link 
                 a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ") Learn More
-            .notification-message 🔉 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste reprehenderit, eveniet soluta, omnis incidunt illo tenetur 
+            .notification-message 🔉 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae quasi possimus placeat error fugit maxime velit molestias vitae illo. Nobis reiciendis accusamus earum mollitia atque ad exercitationem quas repellat natus.
             .notification-dismiss ❌
-        section 
+        .block-gap__v--top(style="--flow-space: 2rem")
+        section.master
+            img.bg-gradient(src="https://nextui.org/gradient-right-dark.svg", alt="")
             .left-sec
+                h2 May the Code be with you
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, veritatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, veritatis. Qui dolorum quae porro in et iste dolorem minima optio!
+                div.btn-wrapper 
+                    a.btn 
             .right-sec
+        include ../components/subscribe
+        .block-gap__v--top(style="--flow-space: 2rem")
+        section.social
+            h2 Learn. Connect. Share.
+            img.bg-gradient(src="https://nextui.org/gradient-left-dark.svg", alt="")
+            .social-wrapper
+                .social-item
+                    img(src="./assets/images/discord-min.png", alt="")
+                .social-item
+                    img(src="./assets/images/whatsapp-min.png", alt="")
+                .social-item
+                    img(src="./assets/images/linkedin-min.png", alt="")
+        .block-gap__v--top(style="--flow-space: 2rem")
+        include ../components/footer

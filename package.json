@@ -4,6 +4,7 @@
   "description": "#Define Website v2 Static Site, PUG and SASS",
   "main": "gulpfile.js",
   "scripts": {
+    "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
