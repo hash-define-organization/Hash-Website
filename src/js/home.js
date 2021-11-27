@@ -19,8 +19,10 @@ function emailHandler() {
     
     submitBtn.addEventListener('click', () => {
         const emailInput = document.querySelector('.subscribe__form--email').value;
-        const submitMessage = document.querySelector('.subscribe__form--submit-message');
-        
+        const messageBox = document.querySelector('.alert-message');
+
+        let submitMessage = messageBox.children[0];
+
         submitMessage.parentElement.style.display = "block";
 
         if(validateEmail(emailInput))
@@ -31,6 +33,12 @@ function emailHandler() {
         {
             submitMessage.innerHTML = "🙅‍♀️ Please enter a valid email address";
         }
+
+        // setTimeout(() => {
+        //     submitMessage.style.animation = "fadeOut 0.5s ease-in-out !important";
+        //     submitMessage.parentElement.style.display = "none";
+        // }
+        // , 2000);
     }); 
 }
 

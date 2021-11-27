@@ -32,6 +32,7 @@
             align-items: center;
             justify-content: center;
             margin: 1.5rem 0;
+            position: relative;
 
             .subscribe__form--email {
                 height: 3rem;
@@ -45,7 +46,7 @@
 
             .subscribe__form--submit {
                 height: 3rem;
-                width: 6srem;
+                width: 6rem;
                 margin-left: 0.5rem;
                 outline: none;
                 border: none;
@@ -59,12 +60,53 @@
                 }
             }
 
-            .error {
+            .alert-message {
+                display: block;
                 text-align: center;
                 position: absolute;
-                top: 180px;
+                top: 60px;
                 color: hsl(var(--clr-light));
-                transition: all 0.3s ease-in-out !important;
+                animation: 3s ease-in-out 3s !important;
+            }
+
+            @keyframes fadeInOut {
+                
+                0% {
+                    opacity: 0;
+                    display: none;
+                }
+
+                50% {
+                    opacity: 1;
+                    display: block;
+                }
+
+                100% {
+                    opacity: 0;
+                    display: none;
+                }
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    display: none;
+                }
+                to {
+                    opacity: 1;
+                    display: block;
+                }
+            }
+
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                    display: block;
+                }
+                to {
+                    opacity: 0;
+                    display: none;
+                }
             }
         }
 
