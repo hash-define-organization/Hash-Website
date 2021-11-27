@@ -10,13 +10,9 @@ html(lang="en")
         script(src="./js/home.js" defer)  
     body
         include ../components/header
-        .notification__wrapper
-            .notification-link 
-                a(href="https://www.youtube.com/watch?v=dQw4w9WgXcQ") Learn More
-            .notification-message 🔉 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae quasi possimus placeat error fugit maxime velit molestias vitae illo. Nobis reiciendis accusamus earum mollitia atque ad exercitationem quas repellat natus.
-            .notification-dismiss ❌
+        include ../components/notification
         .block-gap__v--top(style="--flow-space: 2rem")
-        section.master
+        section.master.noselect
             img.bg-gradient(src="https://nextui.org/gradient-right-dark.svg", alt="")
             .left-sec
                 h2 May the Code be with you
