@@ -2,57 +2,77 @@
     border-top: 1px solid hsl(var(--clr-accent) / 0.4);
     color: hsl(var(--clr-accent));
     
-    
-    img {
-        height: 5rem;
-        width: 5rem;
-        display: inline-block;
-    }
-    
     .footer-wrapper {
         
-        display: flex;
-        margin: 10px auto;
+        display: grid;
+        margin: 0.5rem auto;
         width: calc(100% - 80px);
-        align-items: center;
+        grid-template-columns: 6rem auto;
         
         .left-sec {
+
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
+
+            img {
+
+                height: 5rem;
+                width: 5rem;
+                display: inline-block;
+            }
+
+            p {
+                margin: 0.5rem 0;
+                font-size: var(--fs-100);
+                font-weight: 300;
+            }
         }
 
         .right-sec {
-            align-self: flex-start;
-            display: flex;
-            justify-content: space-between;
+            
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-auto-flow: row;
+            margin-left: 2rem;
 
-            .footer-navigation {
-                // display: inline-block;
-        
-                ul {
-                    display: grid;
-                    gap: 1.2rem;
-                    grid-auto-flow: column;
-                    width: fit-content;
-                    white-space: nowrap;
-                    margin: 0;
-            
-                    li {
-                        list-style-type: none;
-            
-                        a {
-                            text-decoration: none;
-                            color: inherit;
-                        }
+            .footer-links {   
+                
+                grid-row: 1/3;
+                display: flex;
+                flex-wrap: wrap;
+
+                .footer-link {
+                    
+                    display: block;
+                    margin-right: 0.8rem;
+                    margin-left: 0.8rem;
+                    
+                    a {
+                        font-size: var(--fs-400);
+                        text-decoration: none;
+                        color: inherit;
                     }
+
                 }
             }
 
-            .footer-copyright {
-                align-self: flex-end;
+            .footer-misc {
+                grid-row: 4/5;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;    
+
+                .footer-copyright {
+                    display: inline-block;
+                    margin-right: 0.8rem;
+                    margin-left: 0.8rem;
+                    font-size: var(--fs-200);
+                }
             }
+
+            
         }
     }
 }
