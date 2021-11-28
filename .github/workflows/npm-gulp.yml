@@ -42,9 +42,9 @@ jobs:
     #     github_token: ${{ secrets.GIT_PUSH }}
   
     - name: Deploy to Github pages
-        uses: crazy-max/ghaction-github-pages@v2
-        with:
-          target_branch: production
-          build_dir: ./build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GIT_PUSH }}
+      uses: crazy-max/ghaction-github-pages@v2
+      with:
+        target_branch: production
+        build_dir: ./build
+      env:
+        GITHUB_TOKEN: ${{ secrets.GIT_PUSH }}
