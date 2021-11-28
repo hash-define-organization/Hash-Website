@@ -17,7 +17,7 @@ let dir = {
 	dest:	'./build/',		// where we build our files to
 };
 
-dir.dest = process.env.NODE_ENV === 'production' ? './static/' : './build/';
+dir.dest = process.env.NODE_ENV === 'dev' ? './static/' : './build/';
 
 /*----- clobber the build directory -------------------------------*/
 function clean() {
