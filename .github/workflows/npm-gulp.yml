@@ -35,6 +35,7 @@ jobs:
         git config --local user.email "${{ github.actor}} @users.noreply.github.com"
         git add .
         git commit -m "Building latest Update - Github Actions"
+        git subtree push --prefix static https://${{ secrets.GIT_PUSH }}@github.com/hash-define-organization/website-update/ gh-pages
     
     - name: Push changes
       uses: ad-m/github-push-action@master
