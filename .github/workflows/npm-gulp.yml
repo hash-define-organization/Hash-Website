@@ -25,9 +25,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Build
-      run: |
-        npm install
-        gulp build
+      run: npm install --save-dev
+      run: gulp build
 
     - name: Commit
       run: |
