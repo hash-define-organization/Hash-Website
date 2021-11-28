@@ -45,6 +45,6 @@ jobs:
       uses: crazy-max/ghaction-github-pages@v2
       with:
         target_branch: production
-        build_dir: ./build
+        build_dir: ./static
       env:
         GITHUB_TOKEN: ${{ secrets.GIT_PUSH }}
