@@ -23,6 +23,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Build
+      env: 
+        NODE_ENV: ${{secrets.NODE_ENV }}
       run: |
         npm install
         gulp production
