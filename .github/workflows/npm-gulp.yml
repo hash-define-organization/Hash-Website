@@ -35,6 +35,6 @@ jobs:
         git commit -m "Building latest Update - Github Actions"
     
     - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GIT_PUSH }}
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GIT_PUSH }}
