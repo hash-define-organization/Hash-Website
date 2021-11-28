@@ -1,4 +1,17 @@
+class NotificationManager {
+
+    constructor() {
+    }
+
+    static start(delay) {
+
+    }
+}
+
+
 function notificationHandler() {
+
+
 
     const notification = document.querySelector('.notification-dismiss');
 
@@ -42,5 +55,9 @@ function emailHandler() {
     }); 
 }
 
-notificationHandler();
+function init() {
+    console.log("Home page loaded");
+};
+
+setTimeout(init, 5000);
 emailHandler();

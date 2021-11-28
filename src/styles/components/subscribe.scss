@@ -33,6 +33,7 @@
             justify-content: center;
             margin: 1.5rem 0;
             position: relative;
+            opacity: 0.9;
 
             .subscribe__form--email {
                 height: 3rem;
@@ -41,7 +42,6 @@
                 border: none;
                 padding: 0.5rem;
                 border-radius: 0.2em;
-                opacity: 0.8;
             }
 
             .subscribe__form--submit {
@@ -52,7 +52,6 @@
                 border: none;
                 padding: 0.5rem;
                 border-radius: 0.2em;
-                opacity: 0.8;
                 cursor: pointer;
 
                 &:hover {
