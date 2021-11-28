@@ -8,14 +8,16 @@ const	gulp			= require('gulp'),
 		pug				= require('gulp-pug'),
 		sass			= require('gulp-sass')(require('sass')),
 		sourcemaps		= require('gulp-sourcemaps'),
-		browsersync		= require('browser-sync').create();
+		browsersync		= require('browser-sync').create()
+		require('dotenv').config();
 
 /*----- directories -----------------------------------------------*/
-const dir = {
+let dir = {
 	src:	'./src/',		// where our source files live
 	dest:	'./build/',		// where we build our files to
 };
 
+dir.dest = process.env.NODE_ENV === 'production' ? './static/' : './build/';
 
 /*----- clobber the build directory -------------------------------*/
 function clean() {
@@ -146,6 +148,12 @@ function watchFiles() {
 }
 
 
+/*----- Setup Production Build ---------------------------------------------*/
+async function production() {
+	await build();
+}
+
+
 /*----- gulp routines ---------------------------------------------*/
 const build		= gulp.series(gulp.parallel(html, script), gulp.parallel(css, images));
 const watch		= gulp.parallel(watchFiles, browserSync);
@@ -157,6 +165,7 @@ exports.html	= html;
 exports.css		= css;
 exports.images	= images;
 exports.script	= script;
+exports.production = production;
 exports.build	= build;
 exports.watch	= watch;
 exports.default	= gulp.series(build, watch);
