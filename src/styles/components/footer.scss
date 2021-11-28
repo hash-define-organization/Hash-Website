@@ -1,5 +1,6 @@
 .footer {
     border-top: 1px solid hsl(var(--clr-accent) / 0.4);
+    border-bottom: 1px solid hsl(var(--clr-accent) / 0.4); //remove it after the footer is complete
     color: hsl(var(--clr-accent));
     
     
@@ -11,48 +12,72 @@
     
     .footer-wrapper {
         
-        display: flex;
+        display: grid;
         margin: 10px auto;
         width: calc(100% - 80px);
-        align-items: center;
+        // align-items: center;
+        grid-template-columns: 100px auto;
         
         .left-sec {
+
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
+
+            img {
+
+                height: 5rem;
+                width: 5rem;
+                display: inline-block;
+            }
+
+            p {
+
+                margin: 5px;
+                font-size: 10px;
+                font-weight: 300;
+            }
         }
 
         .right-sec {
-            align-self: flex-start;
-            display: flex;
-            justify-content: space-between;
+            
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-auto-flow: row;
+            margin-left: 40px;
 
-            .footer-navigation {
-                // display: inline-block;
-        
-                ul {
-                    display: grid;
-                    gap: 1.2rem;
-                    grid-auto-flow: column;
-                    width: fit-content;
-                    white-space: nowrap;
-                    margin: 0;
-            
-                    li {
-                        list-style-type: none;
-            
-                        a {
-                            text-decoration: none;
-                            color: inherit;
-                        }
+            .footer-links {   
+                
+                grid-row: 1/3;
+                display: flex;
+                flex-wrap: wrap;
+
+                .footer-link {
+                    
+                    display: block;
+                    margin-right: 10px;
+                    margin-left: 10px;
+                    
+                    a {
+                        text-decoration: none;
+                        color: inherit;
                     }
+
                 }
             }
 
-            .footer-copyright {
-                align-self: flex-end;
+            .footer-misc {
+                grid-row: 4/5;
+
+                .footer-copyright {
+                    margin-right: 10px;
+                    margin-left: 10px;
+                    font-size: 12px;
+                }
             }
+
+            
         }
     }
 }
