@@ -29,14 +29,22 @@ jobs:
         npm install --save-dev
         gulp build
 
-    - name: Commit
-      run: |
-        git config --local user.name ${{ github.actor }}
-        git config --local user.email "${{ github.actor}} @users.noreply.github.com"
-        git add .
-        git commit -m "Building latest Update - Github Actions"
+    # - name: Commit
+    #   run: |
+    #     git config --local user.name ${{ github.actor }}
+    #     git config --local user.email "${{ github.actor}} @users.noreply.github.com"
+    #     git add .
+    #     git commit -m "Building latest Update - Github Actions"
     
-    - name: Push changes
-      uses: ad-m/github-push-action@master
+    # - name: Push changes
+    #   uses: ad-m/github-push-action@master
+    #   with:
+    #     github_token: ${{ secrets.GIT_PUSH }}
+  
+    - name: Deploy to Github pages
+      uses: crazy-max/ghaction-github-pages@v2
       with:
-        github_token: ${{ secrets.GIT_PUSH }}
+        target_branch: production
+        build_dir: ./static
+      env:
+        GITHUB_TOKEN: ${{ secrets.GIT_PUSH }}
