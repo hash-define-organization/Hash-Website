@@ -1,13 +1,20 @@
 class NotificationManager {
 
     constructor() {
+        this.notificationSound = new Audio('/assets/sounds/notification.mp3');
     }
 
-    static start(delay) {
+    playSound() {
+        this.notificationSound.play();
+    }
 
+    static notificationHandler(delay) {
+            setTimeout();
     }
 }
 
+const notify = new NotificationManager();
+setTimeout(notify.playSound, 3000);
 
 function notificationHandler() {
 
@@ -59,5 +66,4 @@ function init() {
     console.log("Home page loaded");
 };
 
-setTimeout(init, 5000);
 emailHandler();

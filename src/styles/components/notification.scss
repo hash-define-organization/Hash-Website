@@ -7,18 +7,17 @@
     margin: 0 auto;
     padding: 0 1rem;
     opacity: 0.9;
-    // overflow: hidden;
     color: var(--clr-light);
     box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
     border: 1px solid rgba(255, 255, 255, 0.35);
-    background-color: hsl(var(--clr-light) / 0.5);
+    background-color: #f5a623;
     border-radius: 5px;
     backdrop-filter: blur(15px);
-    
+
     .notification-link {
         opacity: 0.5;
         position: relative;
-        
+
         a {
             display: flex;
             align-items: center;
