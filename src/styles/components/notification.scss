@@ -82,11 +82,11 @@
 
     .notification-dismiss {
 
-        cursor: pointer;
         opacity: 0.5;
         
         button {
             display: flex;
+            cursor: pointer;
             justify-content: center;
             color: inherit;
             background: none;
