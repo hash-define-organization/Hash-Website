@@ -60,17 +60,19 @@
             }
 
             .alert-message {
-                display: block;
+                display: none;
                 text-align: center;
                 position: absolute;
                 top: 60px;
                 color: hsl(var(--clr-light));
-                animation: 3s ease-in-out 3s !important;
+                animation-duration: 4s;
+                animation-name: fadeInOut;
+                animation-timing-function: ease-in-out;
             }
 
             @keyframes fadeInOut {
                 
-                0% {
+                from {
                     opacity: 0;
                     display: none;
                 }
@@ -80,7 +82,7 @@
                     display: block;
                 }
 
-                100% {
+                to {
                     opacity: 0;
                     display: none;
                 }
