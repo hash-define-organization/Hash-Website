@@ -100,6 +100,7 @@
                         // left: 0.1rem;
                         right: -1.1rem;
                         top: 120%;
+                        z-index: 1;
                         margin: 0 auto;
                         padding: 0.3rem 0.6rem;
                         border-radius: 5px;
@@ -117,7 +118,7 @@
 
                     &:hover::after, &:focus-visible::after {
                         display: block;
-                        opacity: 0.8;
+                        opacity: 1;
                         transform: scale(1);
                         transition: transform 70ms linear, opacity 100ms linear;
                     }
