@@ -34,18 +34,22 @@ body{
             h2 {
                 font-weight: 800;
                 font-size: calc(1rem + 2vw);
-                background: linear-gradient(135deg, #CB5EEE 0%, #4BE1EC 100%);
+                background: linear-gradient(135deg, #CB5EEE 0%, #4BE1EC 50%, #CB5EEE 100%);
                 background-clip: text;
+                background-position: left;
+                background-size: 200%;
                 color: transparent;
                 letter-spacing: 0.01rem;
                 word-spacing: 0.001rem;
                 text-transform: uppercase;
+                transition: 1s;
             }
             
             h2:hover{
-                transition: all 1000ms ease-in-out;
-                background: linear-gradient(310deg,#cb5eee,#4be1ec);
+                background: linear-gradient(135deg, #CB5EEE 0%, #4BE1EC 50%, #CB5EEE 100%);
                 background-clip: text;
+                background-position: right;
+                background-size: 200%;
             }
     
             p {
