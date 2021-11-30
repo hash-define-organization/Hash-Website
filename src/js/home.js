@@ -100,6 +100,13 @@ function emailHandler() {
             submitMessage.innerHTML = "🙅‍♀️ Please enter a valid email address";
         }
 
+        submitMessage.parentElement.addEventListener('animationend', () => {
+
+            submitMessage.parentElement.style.display = "none";
+            submitMessage.innerHTML = "";
+
+        })
+
         // setTimeout(() => {
         //     submitMessage.style.animation = "fadeOut 0.5s ease-in-out !important";
         //     submitMessage.parentElement.style.display = "none";
