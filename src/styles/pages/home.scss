@@ -82,13 +82,20 @@ body{
         h2 {
             font-weight: 800;
             font-size: 3rem;
-            background: linear-gradient(135deg, #D6FF7F 0%, #00B3CC 100%);
+            background: linear-gradient(135deg, #D6FF7F 0%, #00B3CC 50%, #D6FF7F 100%);
             background-clip: text;
+            background-size: 200%;
+            background-position: left;
+            transition: background-position 1s;
             color: transparent;
             letter-spacing: 0.01rem;
             word-spacing: 0.001rem;
             text-transform: uppercase;
         
+        }
+
+        h2:hover {
+            background-position: right;
         }
 
         .filter-green{
@@ -110,9 +117,13 @@ body{
                 backdrop-filter: blur(15px);
 
                 display: flex;
+                width: 12em;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
+                transition: 
+                    width ease-in 250ms,
+                    opacity ease-in 250ms,;
                 
                 svg {
                     fill: var(--foreground);
@@ -123,6 +134,7 @@ body{
             
             .social-item:hover {
                 width: 15em;
+                opacity: 1;
             }
 
             .social-item:not(:last-child) {
