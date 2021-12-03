@@ -105,11 +105,13 @@ body{
                 background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/59615/bg--acrylic-light.png);
                 backdrop-filter: blur(15px);
 
+                width: 12em;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
-                
+                transition: width ease-in-out 0.2s, opacity ease-in-out 0.2s;
+
                 svg {
                     fill: var(--foreground);
                     height: 100px;
@@ -119,6 +121,7 @@ body{
             
             .social-item:hover {
                 width: 15em;
+                opacity: 1;
             }
 
             .social-item:not(:last-child) {

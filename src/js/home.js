@@ -1,6 +1,4 @@
-// const dbBaseUrl = 'https://raw.githubusercontent.com/hash-define-organization/website-update/main/database/';
-
-import myObj from './constants.js';
+const dbBaseUrl = 'https://raw.githubusercontent.com/hash-define-organization/website-update/main/database/';
 class NotificationManager {
 
     #notificationHandler = {};
@@ -59,7 +57,7 @@ class NotificationManager {
     }
 }
 
-NotificationManager.initNotificationHandler();
+// NotificationManager.initNotificationHandler();
 
 
 function notificationHandler() {
