@@ -34,18 +34,22 @@ body{
             h2 {
                 font-weight: 800;
                 font-size: calc(1rem + 2vw);
-                background: linear-gradient(135deg, #CB5EEE 0%, #4BE1EC 100%);
+                background: linear-gradient(135deg, #CB5EEE 0%, #4BE1EC 50%, #CB5EEE 100%);
                 background-clip: text;
+                background-position: left;
+                background-size: 200%;
                 color: transparent;
                 letter-spacing: 0.01rem;
                 word-spacing: 0.001rem;
                 text-transform: uppercase;
+                transition: 1s;
             }
             
             h2:hover{
-                transition: all 1000ms ease-in-out;
-                background: linear-gradient(310deg,#cb5eee,#4be1ec);
+                background: linear-gradient(135deg, #CB5EEE 0%, #4BE1EC 50%, #CB5EEE 100%);
                 background-clip: text;
+                background-position: right;
+                background-size: 200%;
             }
     
             p {
@@ -78,13 +82,20 @@ body{
         h2 {
             font-weight: 800;
             font-size: 3rem;
-            background: linear-gradient(135deg, #D6FF7F 0%, #00B3CC 100%);
+            background: linear-gradient(135deg, #D6FF7F 0%, #00B3CC 50%, #D6FF7F 100%);
             background-clip: text;
+            background-size: 200%;
+            background-position: left;
+            transition: background-position 1s;
             color: transparent;
             letter-spacing: 0.01rem;
             word-spacing: 0.001rem;
             text-transform: uppercase;
         
+        }
+
+        h2:hover {
+            background-position: right;
         }
 
         .filter-green{
@@ -105,13 +116,15 @@ body{
                 background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/59615/bg--acrylic-light.png);
                 backdrop-filter: blur(15px);
 
-                width: 12em;
                 display: flex;
+                width: 12em;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
-                transition: width ease-in-out 0.2s, opacity ease-in-out 0.2s;
-
+                transition: 
+                    width ease-in 250ms,
+                    opacity ease-in 250ms,;
+                
                 svg {
                     fill: var(--foreground);
                     height: 100px;
