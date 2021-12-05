@@ -72,6 +72,55 @@ function notificationHandler() {
     });
 }
 
+// gallery
+
+const galleryWraper = document.querySelector('.gallery__wrapper');
+const galleryItems = document.querySelectorAll('.gallery__item');
+let pos = { top: 0, left: 0, x: 0, y: 0 };
+
+const mouseMoveHandler = function (e) {
+    // How far the mouse has been moved
+    const dx = e.clientX - pos.x;
+    const dy = e.clientY - pos.y;
+
+    // Scroll the element
+    galleryWraper.scrollTop = pos.top - dy;
+    galleryWraper.scrollLeft = pos.left - dx;
+};
+
+const mouseUpHandler = function () {
+    document.removeEventListener('mousemove', mouseMoveHandler);
+    document.removeEventListener('mouseup', mouseUpHandler);
+
+    galleryWraper.style.cursor = 'grab';
+    galleryWraper.style.removeProperty('user-select');
+};
+
+const mouseDownHandler = (e) => {
+
+    //change cursor to grab and remove selecting
+    galleryWraper.style.cursor = "grabbing";
+    galleryWraper.style.userSelect = "none";
+
+    pos = {
+        //curr scroll pos of the wrapper
+        left: galleryWraper.scrollLeft,
+        top: galleryWraper.scrollTop,
+
+        //curr pos of the mouse 
+        x: e.clientX,
+        y: e.clientY
+    }
+
+    document.addEventListener('mousemove', mouseMoveHandler);
+    document.addEventListener('mouseup', mouseUpHandler);
+};
+
+galleryWraper.addEventListener('mousedown', mouseDownHandler);
+
+
+// gallery
+
 function emailHandler() {
 
     function validateEmail(email) {
