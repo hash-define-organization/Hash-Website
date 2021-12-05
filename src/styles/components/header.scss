@@ -7,13 +7,14 @@
     font-size: var(--fs-400);
     font-weight: 600;
     justify-content: space-between;
+    margin: 0 1rem;
 
     .left-container {
         
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 2rem;
+        cursor: pointer;
 
         .logo-wrapper {            
             display: flex;
@@ -30,11 +31,39 @@
                 height: 4rem;
             }
         }
+
+        .shimmer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+            background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+            background-size: 0px 100%;
+            background-clip: text;
+            animation-name: shimmer;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-color: #222;
+        }
+    
+        @keyframes shimmer {
+                0% {
+                        background-position: top left;
+                        background-size: 0px 100%;
+                }
+                10% {
+                        background-size: 40% 100%;
+                }
+                100% {
+                        background-position: right;
+                        background-size: 50px 100%;
+                }
+        }
     }
 
     .right-container {        
         display: flex;
-        margin: 0 2rem;
 
         .navigationBar {
             display: flex;
@@ -96,8 +125,7 @@
                         font-size: 0.8rem;
                         color: var(--background);
                         background: hsl(var(--clr-accent));
-                        // left: 0.1rem;
-                        right: -1.1rem;
+                        right: -0.1rem;
                         top: 120%;
                         z-index: 1;
                         margin: 0 auto;
