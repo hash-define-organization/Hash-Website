@@ -1,6 +1,6 @@
-.block-gap__v--top{
-    margin-top: var(--flow-space, 1rem);
-}
+.flow-gap{
+    margin-top: var(--flow-space, 1rem) !important;
+} 
 
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -14,4 +14,26 @@
 
 .uppercase {
     text-transform: uppercase;
+}
+
+// TODO: Add Default Gradient
+
+.tagline {
+    font-weight: 800;
+    font-size: calc(2rem + 1vw);
+    background: var(--bg-gradient, linear-gradient(to right, #00c6fb 0%, #005bea 100%));
+    background-clip: text;
+    background-position: left;
+    background-size: 200%;
+    color: transparent;
+    letter-spacing: 0.01rem;
+    word-spacing: 0.001rem;
+    text-transform: uppercase;
+    transition: 1s;
+}
+
+.tagline:hover{
+    background-clip: text;
+    background-position: right;
+    background-size: 200%;
 }

@@ -1,8 +1,11 @@
 .gallery {
 
+    display: flex;
     width: 100%;
     height: 48rem;
     padding: 0 40px;
+    flex-direction: column;
+    align-items: center;
 
     .gallery__wrapper {
         width: 100%;
