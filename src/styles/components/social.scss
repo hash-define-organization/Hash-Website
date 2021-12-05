@@ -67,8 +67,24 @@
             }
         }
         
-        .social-item:hover {
+        .discord:hover {
             background-image: url(https://github.com/hash-define-organization/website-update/raw/main/src/assets/images/social/discord.jpg);
+            background-size: cover;
+            width: 120%;
+            opacity: 1;
+        }
+
+        .whatsapp:hover {
+            background-image: url(https://github.com/hash-define-organization/website-update/raw/main/src/assets/images/social/whatsapp.jpg);
+            background-size: cover;
+            width: 120%;
+            filter: contrast(0.9);
+            opacity: 1;
+        }
+
+        .linkedin:hover {
+            background-image: url(https://github.com/hash-define-organization/website-update/raw/main/src/assets/images/social/linkedin.jpg);
+            background-size: cover;
             width: 120%;
             opacity: 1;
         }
