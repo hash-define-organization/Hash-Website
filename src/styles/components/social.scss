@@ -1,0 +1,96 @@
+.social {
+            
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+
+    .bg-gradient {
+        position: absolute;
+        top: -80%;
+        left: -10%;
+        z-index: -1;
+        transform: scale(0.6);
+    }
+
+    h2 {
+        font-weight: 800;
+        font-size: 3rem;
+        background: linear-gradient(135deg, #D6FF7F 0%, #00B3CC 50%, #D6FF7F 100%);
+        background-clip: text;
+        background-size: 200%;
+        background-position: left;
+        transition: background-position 1s;
+        color: transparent;
+        letter-spacing: 0.01rem;
+        word-spacing: 0.001rem;
+        text-transform: uppercase;
+    }
+
+    h2:hover {
+        background-position: right;
+    }
+
+    .social-wrapper {
+        display: flex;
+        margin: 0 1em;
+        width: 100%;
+        // grid-template-columns: repeat(3, 1fr);
+
+
+        .social-item {
+            padding: 2rem;
+            box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            opacity: 0.4;
+            background-color: hsl(var(--clr-light) / 0.5);
+            border-radius: 5px;
+            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/59615/bg--acrylic-light.png);
+            backdrop-filter: blur(15px);
+
+            display: flex;
+            width: 100%;
+            height: 20rem;
+            min-width: fit-content;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 
+                width ease-in 100ms,
+                opacity ease-in 100ms,;
+            
+            svg {
+                fill: var(--foreground);
+                height: 100px;
+                width: 100px;
+            }
+        }
+        
+        .discord:hover {
+            background-image: url(https://github.com/hash-define-organization/website-update/raw/main/src/assets/images/social/discord.jpg);
+            background-size: cover;
+            width: 120%;
+            opacity: 1;
+        }
+
+        .whatsapp:hover {
+            background-image: url(https://github.com/hash-define-organization/website-update/raw/main/src/assets/images/social/whatsapp.jpg);
+            background-size: cover;
+            width: 120%;
+            filter: contrast(0.9);
+            opacity: 1;
+        }
+
+        .linkedin:hover {
+            background-image: url(https://github.com/hash-define-organization/website-update/raw/main/src/assets/images/social/linkedin.jpg);
+            background-size: cover;
+            width: 120%;
+            opacity: 1;
+        }
+
+        .social-item:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+}
