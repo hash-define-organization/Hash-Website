@@ -1,14 +1,11 @@
 .gallery {
-
+    width: 100%;
     height: 48rem;
-    border: 1px solid #ccc;
-    margin: 0 auto;
+    padding: 0 40px;
 
     .gallery__wrapper {
-
         width: 100%;
         height: 100%;
-        padding: 1rem;
         // cursor: grab;
         overflow: auto;
 
@@ -19,10 +16,9 @@
         grid-gap: 1rem;
 
         .gallery__item {
-
+            display: block;
             width: 100%;
             height: 100%;
-            display: block;
             position: relative;
             cursor: pointer;
             border-radius: 1rem;
