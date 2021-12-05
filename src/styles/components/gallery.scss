@@ -1,5 +1,6 @@
 .gallery {
 
+    width: 100%;
     height: 48rem;
     border: 1px solid #ccc;
     margin: 0 auto;
@@ -26,12 +27,23 @@
             position: relative;
             cursor: pointer;
             border-radius: 1rem;
+            z-index: 0;
 
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 border-radius: inherit;
+            }
+
+            .gallery__item-content {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                bottom: 0;
+                z-index: 2;
             }
 
             &::after {
@@ -42,10 +54,10 @@
                 width: 100%;
                 height: 100%;
                 border-radius: inherit;
-                // opacity: 0;
                 background: linear-gradient(to top, rgba(91, 98, 129, 1) 0%, rgba(87, 92, 117,0.7) 40%, rgba(87, 92, 117,0.2) 100%);
                 opacity: 0;
                 transition: ease-in-out 1s;
+                z-index: 1;
             }
 
             &:hover::after {
