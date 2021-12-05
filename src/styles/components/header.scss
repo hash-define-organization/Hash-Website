@@ -41,7 +41,7 @@
             background-clip: text;
             animation-name: shimmer;
             animation-duration: 3s;
-            animation-iteration-count: 3;
+            animation-iteration-count: infinite;
             background-repeat: no-repeat;
             background-position: 0 0;
             background-color: #222;
@@ -125,8 +125,7 @@
                         font-size: 0.8rem;
                         color: var(--background);
                         background: hsl(var(--clr-accent));
-                        // left: 0.1rem;
-                        right: -1.1rem;
+                        right: -0.1rem;
                         top: 120%;
                         z-index: 1;
                         margin: 0 auto;
