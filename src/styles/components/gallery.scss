@@ -1,28 +1,28 @@
 .gallery {
 
-    display: flex;
-    width: 100%;
-    height: 48rem;
+    // display: flex;
+    width: auto;
+    height: auto;
     padding: 0 40px;
-    flex-direction: column;
-    align-items: center;
+    border: 1px solid #e5e5e5;
+    overflow: hidden;
+    overflow-x: scroll;
 
     .gallery__wrapper {
-        width: 100%;
-        height: 100%;
-        // cursor: grab;
-        overflow: auto;
 
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-auto-columns: 16rem;
-        grid-auto-flow: column;
-        grid-gap: 1rem;
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        cursor: grab;
+        overflow: hidden;
 
         .gallery__item {
+
             display: block;
-            width: 100%;
+            width: 16rem;
             height: 100%;
+            margin: 1rem;
+
             position: relative;
             cursor: pointer;
             border-radius: 1rem;
