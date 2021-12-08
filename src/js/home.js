@@ -5,48 +5,46 @@ class NotificationManager {
 
     messages = null;
     displayElement = null;
+    messagePlaceholder = null;
+    linkPlaceholder = null;
+    totalCountElement = null;
+    currentCountElement = null;
+    
+    cielCount = null;
+    currentCount = null;
+    totalCount = null;
 
     constructor() {
         this.displayElement = document.querySelector('.notification__wrapper');
+        this.messagePlaceholder = document.querySelector('.notification-message');
+        this.linkPlaceholder = document.querySelector('.notification-link__content');
+        this.totalCountElement = document.querySelector('.total-count');
+        this.currentCountElement = document.querySelector('.current-count');
+
+        // Event Listeners
+        this.dismissBtn = document.querySelector('#dismissBtn');
+        this.expandBtn = document.querySelector('#expandBtn');
+        this.showNextBtn = document.querySelector('#showNextBtn');
+     
+        this.startWithDelay(1000);
+    }
+
+    startWithDelay(time) {
+        setTimeout(() => {
+            this.initNotificationHandler();
+        }, time);
     }
 
     toggleElementVisibility() {
         this.displayElement.style.display = this.displayElement.style.display === "none" ? "" : "none";
     }
 
-    showNotification() {
+    showNotification(count) {
+        this.currentCountElement.innerText = count;
 
-        
-        if(!this.messages) {
-            console.log("No Notifications to Show!");
-            return;
-        }
-        
-        let messagePlaceholder = document.querySelector('.notification-message');
-        let linkPlaceholder = document.querySelector('.notification-link__content');
+        let message = Object.values(this.messages)[count-1];
 
-        for (const key in this.messages) {
-            if (Object.hasOwnProperty.call(this.messages, key)) {
-                const element = this.messages[key];
-                this.toggleElementVisibility();
-
-                console.log(element.url);
-
-                messagePlaceholder.innerText = element.content;
-                linkPlaceholder.setAttribute('href', element.url);
-            }
-
-            sleep(1000);
-        }
-    }
-
-    async getNotifications() {
-        try {
-            this.messages = await this.fetchNotifications();
-            this.showNotification();
-        } catch (error) {
-            console.log(error);
-        }
+        this.messagePlaceholder.innerHTML = message.content;
     }
 
     async fetchNotifications() {
@@ -57,18 +55,43 @@ class NotificationManager {
         }
     }
 
-    static initNotificationHandler(objectHandler) {
+    async initNotificationHandler() {
+        try {
+            this.messages = await this.fetchNotifications();
+            
+            if(!this.messages) return; 
 
-        if(!objectHandler) throw new Error("Object Handler required to Work!");
+            this.toggleElementVisibility();
+            this.currentCount = this.cielCount = 1;
+            this.totalCount = Object.keys(this.messages).length;
+            this.totalCountElement.innerHTML = `&nbsp;/&nbsp; ${this.totalCount}`;
+            
+            this.showNotification(this.cielCount);
 
-        setTimeout(() => {
-            objectHandler.getNotifications();
-        }, 1000);
+            this.dismissBtn.addEventListener('click', () => {
+                this.toggleElementVisibility();
+
+                this.displayElement.style.height = "0px";
+                this.displayElement.style.animation = "drawer 0.2s ease-in reverse";
+            });
+            this.expandBtn.addEventListener('click', () => {
+                console.log("Showing Message!");
+            });
+            this.showNextBtn.addEventListener('click', () => {
+                this.cielCount++;
+
+                if(this.cielCount > this.totalCount ) this.cielCount -= this.totalCount;
+
+                this.showNotification(this.cielCount);
+            });
+
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 
 const notificationHandler = new NotificationManager();
-NotificationManager.initNotificationHandler(notificationHandler);
 
 // gallery
 
