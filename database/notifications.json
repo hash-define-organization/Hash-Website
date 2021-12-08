@@ -1,7 +1,10 @@
 {
-    "29-11-2021" : {
-        "url" : "Upcoming Event - HashCode",
-        "content" : "ipsum, dolor sit amet consectetur adipisicing elit. Molestiae quasi possimus placeat error fugit maxime velit molestias vitae illo. Nobis reiciendis accusamus earum molli"
-    }
-    
+    "1" : {
+        "url" : "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "content" : "Upcoming Event - HashCode"
+    },
+    "2" : {
+        "url" : "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "content" : "Announcement - Junior Council Members Selected"
+    }   
 }
