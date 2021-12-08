@@ -1,76 +1,67 @@
-const dbBaseUrl = 'https://raw.githubusercontent.com/hash-define-organization/website-update/main/database/';
+const dbBaseUrl = 'https://raw.githubusercontent.com/hash-define-organization/website-update/main/database';
+const notificationsUrl = '/notifications.json';
+const eventsUrl = '/gallery/gallery.json';
 class NotificationManager {
 
-    #notificationHandler = {};
+    messages = null;
 
     constructor() {
-        this.notificationSound = new Audio('/assets/sounds/notification.mp3');
-
-        notificationSound();
-        showNotification();
     }
 
-    notificationSound () {
-        const audioElement = document.createElement('audio');
-        audioElement.setAttribute('src', '/assets/sounds/notification.mp3');
-        this.#notificationHandler.sound = audioElement;
+    displayNotification(data) {
+        
     }
 
     showNotification() {
-        this.#notificationHandler.sound.play();
+
+        if(!this.messages) {
+            console.log("No Notifications to Show!");
+            return;
+        }
     }
 
-    async setNotification() {
+    async getNotifications() {
         try {
-            this.#notificationHandler.data = await this.fetchNotification();
-            console.log(this.#notificationHandler);
+            this.messages = await this.fetchNotifications();
+            this.showNotification();
         } catch (error) {
             console.log(error);
         }
     }
 
-    static setInstance(instance) {
-        this.#notificationHandler.instance = instance;
-        console.log(this.#notificationHandler);
-    }
-
-    async fetchNotification() {
+    async fetchNotifications() {
         try {
-            return await (await fetch(`${dbBaseUrl}notifications.json`)).json();
+            return await (await fetch(`${dbBaseUrl}${notificationsUrl}`)).json();
         } catch (error) {
             console.log("Failed to check for Notifications");
         }
     }
 
-    //show notif
+    static initNotificationHandler(objectHandler) {
 
-    //dismiss hotification
+        if(!objectHandler) throw new Error("Object Handler required to Work!");
 
-
-    // Start Notification Manager after some time on Website
-
-    static initNotificationHandler() {
-            setTimeout(() => {
-                NotificationManager.setInstance(new NotificationManager());
-                console.dir(this);
-            }, 0);
+        setTimeout(() => {
+            console.log(this);
+            objectHandler.getNotifications();
+        }, 0);
     }
 }
 
-// NotificationManager.initNotificationHandler();
+const notificationHandler = new NotificationManager();
+NotificationManager.initNotificationHandler(notificationHandler);
+
+// function notificationHandler() {
 
 
-function notificationHandler() {
 
+//     const notification = document.querySelector('.notification-dismiss');
 
-
-    const notification = document.querySelector('.notification-dismiss');
-
-    notification.addEventListener('click', () => {
-        const notification = document.querySelector('.notification__wrapper');
-        notification.style.display = "none";    
-    });
-}
+//     notification.addEventListener('click', () => {
+//         const notification = document.querySelector('.notification__wrapper');
+//         notification.style.display = "none";    
+//     });
+// }
 
 // gallery
 
