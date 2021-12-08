@@ -1,10 +1,19 @@
 .notification__wrapper(style="display: none;")
-    .notification-link
-        a.notification-link__content(href="#" aria-label="Learn More" )
-            svg.h-5.w-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20' fill='currentColor')
-                path(fill-rule='evenodd' d='M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z' clip-rule='evenodd')
-    .notification-message 
-    .notification-dismiss
-        button(aria-label="Dismiss")
-            svg.h-6.w-6(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke='currentColor')
-                path(stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z')
+    .left-container
+        .next-notification.notification-button
+            button#showNextBtn(aria-label="Show Next")
+                svg.h-6.w-6(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke='currentColor')
+                    path(stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z') 
+        .notification-count
+            .current-count 1
+            .total-count &nbsp;/&nbsp; null 
+    .notification-message
+    .right-container
+        .notification-link.notification-button
+            button#expandBtn(aria-label="Learn More")
+                svg.h-6.w-6(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke='currentColor')
+                    path(stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7')
+        .notification-dismiss.notification-button
+            button#dismissBtn(aria-label="Dismiss")
+                svg.h-6.w-6(xmlns='http://www.w3.org/2000/svg' fill='none' viewbox='0 0 24 24' stroke='currentColor')
+                    path(stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z')
