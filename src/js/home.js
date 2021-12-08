@@ -4,19 +4,39 @@ const eventsUrl = '/gallery/gallery.json';
 class NotificationManager {
 
     messages = null;
+    displayElement = null;
 
     constructor() {
+        this.displayElement = document.querySelector('.notification__wrapper');
     }
 
-    displayNotification(data) {
-        
+    toggleElementVisibility() {
+        this.displayElement.style.display = this.displayElement.style.display === "none" ? "" : "none";
     }
 
     showNotification() {
 
+        
         if(!this.messages) {
             console.log("No Notifications to Show!");
             return;
+        }
+        
+        let messagePlaceholder = document.querySelector('.notification-message');
+        let linkPlaceholder = document.querySelector('.notification-link__content');
+
+        for (const key in this.messages) {
+            if (Object.hasOwnProperty.call(this.messages, key)) {
+                const element = this.messages[key];
+                this.toggleElementVisibility();
+
+                console.log(element.url);
+
+                messagePlaceholder.innerText = element.content;
+                linkPlaceholder.setAttribute('href', element.url);
+            }
+
+            sleep(1000);
         }
     }
 
@@ -42,26 +62,13 @@ class NotificationManager {
         if(!objectHandler) throw new Error("Object Handler required to Work!");
 
         setTimeout(() => {
-            console.log(this);
             objectHandler.getNotifications();
-        }, 0);
+        }, 1000);
     }
 }
 
 const notificationHandler = new NotificationManager();
 NotificationManager.initNotificationHandler(notificationHandler);
-
-// function notificationHandler() {
-
-
-
-//     const notification = document.querySelector('.notification-dismiss');
-
-//     notification.addEventListener('click', () => {
-//         const notification = document.querySelector('.notification__wrapper');
-//         notification.style.display = "none";    
-//     });
-// }
 
 // gallery
 

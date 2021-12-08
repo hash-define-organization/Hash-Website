@@ -72,11 +72,34 @@
 
     .notification-message {
         margin: 0 1rem;
+        position: relative;
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis;
         color: var(--clr-dark);
 
+        &::before {
+            content: "";
+            background: linear-gradient(90deg,#f5a623,hsla(0,0%,9%,0));
+            left: 0;
+            width: 6px;
+            bottom: 0;
+            position: absolute;
+            top: 0;
+            width: 6px;
+            z-index: 1;
+        }
+
+        &::after {
+            content: "";
+            background: linear-gradient(90deg,#f5a623,hsla(0,0%,9%,0));
+            right: 0;
+            width: 12px;
+            bottom: 0;
+            position: absolute;
+            top: 0;
+            width: 6px;
+            z-index: 1;
+        }
     }   
 
     .notification-dismiss {
@@ -95,11 +118,6 @@
                 height: 1.5rem;
                 width: 1.5rem;
             }
-    
-            // &:hover, &:focus-visible {
-            //      opacity: 1;
-            //      background: hsl(var(--clr-accent) / 0.2);
-            // }
             
             &::after {
                 display: block;
