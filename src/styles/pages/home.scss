@@ -21,8 +21,9 @@ body{
     /*  Custom Scroll Bar YT Like    */
     &::-webkit-scrollbar {
         width: 10px;
+        left: -10px;
     }
-
+    
     &::-webkit-scrollbar-thumb {
         background: #4A4A4A; 
         border-radius: 1em;
