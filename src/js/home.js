@@ -96,7 +96,7 @@ const notificationHandler = new NotificationManager();
 // gallery
 
 const galleryWraper = document.querySelector('.gallery__wrapper');
-const galleryItems = document.querySelectorAll('.gallery__item');
+// const galleryItems = document.querySelectorAll('.gallery__item');
 let pos = { top: 0, left: 0, x: 0, y: 0 };
 
 const mouseMoveHandler = function (e) {
@@ -138,6 +138,14 @@ const mouseDownHandler = (e) => {
 };
 
 galleryWraper.addEventListener('mousedown', mouseDownHandler);
+
+//update gallery
+const galleryColumn = document.querySelector('.gallery__flex');
+(async function() {
+
+    
+
+})();
 
 
 // gallery
