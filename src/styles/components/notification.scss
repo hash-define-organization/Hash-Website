@@ -13,12 +13,18 @@
     background-color: #f5a623;
     border-radius: 5px;
     backdrop-filter: blur(15px);
-    animation: drawer 0.2s ease-in;
+    animation: drawerOpen 0.2s ease-in;
 
-    @keyframes drawer {
-        from {height: 0px;}
-        to {height: 40px;}
-    }    
+    @keyframes drawerOpen {
+        from {
+            height: 0px;
+            opacity: 0;
+        }
+        to {
+            height: 40px;
+            opacity: 1;
+        }
+    }
 
     .notification-button {
         opacity: 0.5;
@@ -97,5 +103,21 @@
     .right-container {
         display: inline-flex;
 
+    }
+}
+
+.notification__wrapper--close {
+    animation: drawerClose 0.2s ease-in;
+    animation-fill-mode: forwards;
+
+    @keyframes drawerClose {
+        from {
+            height: 40px;
+            opacity: 1;
+        }
+        to {
+            height: 0px;
+            opacity: 0;
+        }
     }
 }
