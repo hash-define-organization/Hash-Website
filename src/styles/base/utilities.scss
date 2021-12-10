@@ -32,6 +32,10 @@
     transition: 1s;
 }
 
+a {
+    transition: 100ms ease-in-out;
+}
+
 .tagline:hover{
     background-clip: text;
     background-position: right;
