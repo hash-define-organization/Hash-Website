@@ -31,6 +31,7 @@ jobs:
         git clone https://github.com/WINOFFRG/hashdefine-backend.git
         cd hashdefine-backend/
         cd ../
+        del public
         mv "website-update/public" "hashdefine-backend"
         cd hashdefine-backend
         echo commit changes
