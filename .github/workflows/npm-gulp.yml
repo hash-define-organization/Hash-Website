@@ -1,36 +1,41 @@
-name: NodeJS with Gulp
-
+name: NodeJS with Gulp Production Build
 on:
   push:
     branches: [ main ]
-
+  pull_request:
+    branches: [ main ]
 jobs:
   build:
     runs-on: ubuntu-latest
     env: 
       NODE_ENV: ${{ secrets.NODE_ENV }}
-
+      API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      
     strategy:
       matrix:
         node-version: [16.x]
     
     steps:
     - uses: actions/checkout@v2
-
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-
     - name: Build
       run: |
-        npm install --save-dev
-        gulp build
-  
-    - name: Deploy to Github pages
-      uses: crazy-max/ghaction-github-pages@v2
-      with:
-        target_branch: production
-        build_dir: ./static
-      env:
-        GITHUB_TOKEN: ${{ secrets.GIT_PUSH }}
+        npm install
+        npm run build
+    - name: Come out of that dir
+      run: |
+        cd ../
+        git clone https://github.com/WINOFFRG/hashdefine-backend.git
+        cd hashdefine-backend/
+        cd ../
+        mv "website-update/public" "hashdefine-backend"
+        cd hashdefine-backend
+        echo commit changes
+        git config --local user.name ${{ github.actor }}
+        git config --local user.email "${{ github.actor}} @users.noreply.github.com"
+        git add .
+        git commit -m "Added Build Folder"
+        git push "https://winoffrg:$API_TOKEN_GITHUB@github.com/winoffrg/hashdefine-backend.git" --set-upstream "main"
