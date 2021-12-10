@@ -14,7 +14,7 @@ const	gulp			= require('gulp'),
 /*----- directories -----------------------------------------------*/
 let dir = {
 	src:	'./src/',		// where our source files live
-	dest:	'./build/',		// where we build our files to
+	dest:	'./public/',		// where we build our files to
 };
 
 dir.dest = process.env.NODE_ENV === 'dev' ? './static/' : './build/';
