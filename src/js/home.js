@@ -71,12 +71,13 @@ class NotificationManager {
             this.dismissBtn.addEventListener('click', () => {
                 this.toggleElementVisibility();
 
-                this.displayElement.style.height = "0px";
-                this.displayElement.style.animation = "drawer 0.2s ease-in reverse";
+                this.displayElement.classList.add('notification__wrapper--close');
             });
+
             this.expandBtn.addEventListener('click', () => {
                 console.log("Showing Message!");
             });
+
             this.showNextBtn.addEventListener('click', () => {
                 this.cielCount++;
 
