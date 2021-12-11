@@ -1,105 +1,52 @@
-/*
-class Router {
-
-    rootDiv = null;
-    host = null;
-    events = null;
-
-    constructor() {
-        this.rootDiv = document.querySelector('.master-container');
-        this.host = window.location.host;
-        
-        this.routes = {
-            '/' : '',
-            'events' : '',
-        }
-
-        this.events = this.manageEvents();
-    }
-
-    manageEvents() {
-        window.onload = () => {this.render()};
-        window.onpopstate = () => {
-            this.rootDiv.innerHTML = this.routes[window.location.pathname];
-        };
-    }
-
-    async render(path) {
-
-        path = !path ? window.location.pathname : path;
-
-        if(path === '/') {
-            this.routes[path] = await this.getPage('home');
-        }
-        else {
-            const pageData = await this.getPage(path);
-
-            if(!pageData) {
-                const page404 = await this.getPage('404');
-                window.history.pushState(
-                    {},
-                    pathName,
-                    `${pathName}`,
-                  );
-        
-                this.rootDiv.innerHTML = page404;
-                return;
-            }
-            else {
-                this.routes[path] = pageData;
-            }
-        }
-
-        this.navigation(path);
-    }
-
-    async getPage (pathName) {
-
-        const page = `/${pathName}.html`
-
-        try {
-            const response = await fetch(page);
-            return response.text();
-        } catch (error) {
-            console.log("Load 404 Page");
-        }
-    }
-
-    navigation (pathName) {
-
-        window.history.pushState(
-            {},
-            pathName,
-            `${pathName}`,
-          );
-
-        this.rootDiv.innerHTML = this.routes[pathName];
-    }
-}
-
-const pageRouter = new Router();
-window.pageRouter = pageRouter;
-
-*/
-
 class Router {
 
     routes = null;
     globalTitle = null;
     views = null;
+    mountPoint = 'body';
 
     constructor() {
 
-        this.routes = setRoutes();
-        this.views = setViews();
+        this.routes = this.setRoutes();
+        this.views = this.setViews();
         this.globalTitle = 'Hash Define';
+        this.mountPoint = document.querySelector('.master-container');
+        
+        this.setEvents();
+    }
 
+    setEvents() { 
+        window.addEventListener("popstate", this.render);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.addEventListener("click", e => {
+                if (e.target.matches("[data-link]")) {
+                    e.preventDefault();
+                    navigateTo(e.target.href);
+                }
+            });
+        
+            this.render();
+        });
+    }
+
+    navigation(url) {
+        history.pushState(null, null, url);
+        this.render();
     }
 
     async render() {
 
+        let path = window.location.pathname;
 
-    }
+        //Purify Path
+        let viewPath = this.views[path] === undefined ? '404' : path;
+
+        //Fetch Content if not present
+        let viewContent = this.views[viewPath] === '' ? await this.getView(this.routes[viewPath].view) : this.views[viewPath];
+
+        this.mountPoint.innerHTML = viewContent;
+    };
 
     setRoutes() {
         return {
@@ -123,7 +70,7 @@ class Router {
                 view: '404',
                 title: `404 - Page Not Found`,
             }
-        }
+        };
     }
    
     setViews() {
@@ -145,3 +92,5 @@ class Router {
         }
     }
 };
+
+const pageRouter = new Router();
