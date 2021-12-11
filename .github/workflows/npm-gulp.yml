@@ -23,18 +23,19 @@ jobs:
       run: |
         npm install
         npm run build
-    - name: Come out of that dir
+    - name: Clone Source Repository
       run: |
         cd ../
         git clone https://github.com/WINOFFRG/hashdefine-backend.git
-        cd hashdefine-backend/
-        rm -rf public
-        rm app.js
+    - name: Add Public Files
+      run: |
         cd ../
-        mv "website-update/app.js" "hashdefine-backend"
+        rm -rf hashdefine-backend/public/
         mv "website-update/public" "hashdefine-backend"
         cd hashdefine-backend
-        echo commit changes
+        ls
+    - name: Commit and Push changes
+      run: |
         git config --local user.name ${{ github.actor }}
         git config --local user.email "${{ github.actor}} @users.noreply.github.com"
         git add .
