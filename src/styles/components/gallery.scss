@@ -44,10 +44,27 @@
                     opacity: 0;
                     transition: all 0.5s ease-in-out;
                     z-index: 102;
+
+                    .event-name {
+                        
+                        width: inherit;
+                        overflow: hidden;
+                        
+                        h2 {
+                            width: fit-content;
+                            display: inline-block;
+                            white-space: nowrap;
+                            padding: 0 1rem;
+                            transform: translateX(0);
+                            // overflow: hidden;
+                            // transform: translateX(-50%);
+                            // text-overflow: ellipsis;
+                        }
+                    }
                 }
 
                 &:hover {
-                    transform: scale(1.05);
+                    transform: scale(1);
 
                     .gallery__item-content {
                         opacity: 1;

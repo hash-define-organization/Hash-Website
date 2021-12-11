@@ -125,6 +125,20 @@ const galleryColumn = document.querySelector('.gallery__flex');
     
 
 })();
+//update gallery
+
+//moving text gallery-content
+const eventName = document.querySelector('.event-name h2');
+const galleryItem = document.querySelector('.gallery__item');
+
+const cardWidth = galleryItem.scrollWidth;
+const eventNameWidth = eventName.scrollWidth;
+
+console.log("h2:" , eventNameWidth);
+console.log("card:", cardWidth);
+console.log("sub:", cardWidth - eventNameWidth);
+//moving text gallery-content
+
 
 
 // gallery
