@@ -30,8 +30,8 @@ jobs:
         cd ../
         git clone https://github.com/WINOFFRG/hashdefine-backend.git
         cd hashdefine-backend/
-        cd ../
         rm -rf public
+        cd ../
         mv "website-update/public" "hashdefine-backend"
         cd hashdefine-backend
         echo commit changes
