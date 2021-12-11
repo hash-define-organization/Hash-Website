@@ -46,5 +46,8 @@
   "browserslist": [
     "last 15 versions",
     "> 1%"
-  ]
+  ],
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

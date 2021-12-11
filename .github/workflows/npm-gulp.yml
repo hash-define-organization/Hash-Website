@@ -29,7 +29,9 @@ jobs:
         git clone https://github.com/WINOFFRG/hashdefine-backend.git
         cd hashdefine-backend/
         rm -rf public
+        rm app.js
         cd ../
+        mv "website-update/app.js" "hashdefine-backend"
         mv "website-update/public" "hashdefine-backend"
         cd hashdefine-backend
         echo commit changes
