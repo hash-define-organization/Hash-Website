@@ -12,7 +12,7 @@ body{
             height: auto;
             width: calc(100% - 80px);
             margin: 2rem auto;
-            grid-auto-rows: auto;
+            grid-auto-rows: fit-content;
             gap: 2rem;
 
         }    
