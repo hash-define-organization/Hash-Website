@@ -20,7 +20,7 @@ let dir = {
 /*----- clobber the build directory -------------------------------*/
 function clean() {
 	return del(
-		['./public/**', '!public/']
+		['./public/**']
 	);
 }
 
