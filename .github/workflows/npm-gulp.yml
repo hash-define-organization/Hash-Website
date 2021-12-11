@@ -24,7 +24,7 @@ jobs:
     - name: Build
       run: |
         npm install
-        npm 
+        npm run build
     - name: Come out of that dir
       run: |
         cd ../
