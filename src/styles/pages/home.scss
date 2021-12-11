@@ -6,6 +6,7 @@ body{
     font-size: 1rem;
 
     .master-container {
+        min-height: 80vh;
 
         .master-container__inner {
             display: grid;
