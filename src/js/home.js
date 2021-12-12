@@ -151,13 +151,13 @@ const galleryColumn = document.querySelector('.gallery__flex');
 //update gallery
 
 //moving text gallery-content
-const eventNameWrapper = document.querySelector('.event-name');
-const eventName = document.querySelector('.event-name h2');
-
-const speakerNameWrapper = document.querySelector('.speaker-name');
-const speakerName = document.querySelector('.speaker-name p');
 
 window.addEventListener('load', () => {
+    const eventNameWrapper = document.querySelector('.event-name');
+    const eventName = document.querySelector('.event-name p');
+    
+    const speakerNameWrapper = document.querySelector('.speaker-name');
+    const speakerName = document.querySelector('.speaker-name p');
 
     const eventNameWrapperWidth = eventNameWrapper.offsetWidth;
     const eventNameWidth = eventName.offsetWidth;
@@ -167,9 +167,9 @@ window.addEventListener('load', () => {
     const speakerNameWidth = speakerName.offsetWidth;
     const speakerNameMoveWidth = speakerNameWrapperWidth - speakerNameWidth;
      
-    console.log("h2:" , eventNameWidth);
-    console.log("h2 wrapper:", eventNameWrapperWidth);
-    console.log("h2 move:", eventNameMoveWidth);
+    console.log("p:" , eventNameWidth);
+    console.log("p wrapper:", eventNameWrapperWidth);
+    console.log("p move:", eventNameMoveWidth);
 
     console.log("p:", speakerNameWidth);
     console.log("p wrapper:", speakerNameWrapperWidth);
