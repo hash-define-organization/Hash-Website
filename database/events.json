@@ -2,7 +2,7 @@
   "05-12-21": {
     "poster_link": "https://rukminim1.flixcart.com/image/416/416/jfea93k0/poster/j/3/u/medium-the-avenges-initiative-3-moives-posters-mp0098-original-imaf3mhpcyhwhtkt.jpeg",
     "event_name": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    "event_type": "Career Counsilling",
+    "event_type": ["Career Counsilling"],
     "event_guest": "Mr. XYZ",
     "ref_link": "https://www.youtube.com/watch?v=Fkk9DI-8el4"
   },
@@ -10,7 +10,7 @@
   "06-12-21": {
     "poster_link": "https://rukminim1.flixcart.com/image/416/416/jfea93k0/poster/j/3/u/medium-the-avenges-initiative-3-moives-posters-mp0098-original-imaf3mhpcyhwhtkt.jpeg",
     "event_name": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    "event_type": "Career Counsilling",
+    "event_type": ["Career Counsilling"],
     "event_guest": "Mr. XYZ",
     "ref_link": "https://www.youtube.com/watch?v=Fkk9DI-8el4"
   },
@@ -18,7 +18,7 @@
   "07-12-21": {
     "poster_link": "https://rukminim1.flixcart.com/image/416/416/jfea93k0/poster/j/3/u/medium-the-avenges-initiative-3-moives-posters-mp0098-original-imaf3mhpcyhwhtkt.jpeg",
     "event_name": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    "event_type": "Career Counsilling",
+    "event_type": ["Career Counsilling"],
     "event_guest": "Mr. XYZ",
     "ref_link": "https://www.youtube.com/watch?v=Fkk9DI-8el4"
   },
@@ -26,7 +26,7 @@
   "08-12-21": {
     "poster_link": "https://rukminim1.flixcart.com/image/416/416/jfea93k0/poster/j/3/u/medium-the-avenges-initiative-3-moives-posters-mp0098-original-imaf3mhpcyhwhtkt.jpeg",
     "event_name": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    "event_type": "Career Counsilling",
+    "event_type": ["Career Counsilling"],
     "event_guest": "Mr. XYZ",
     "ref_link": "https://www.youtube.com/watch?v=Fkk9DI-8el4"
   },
@@ -34,7 +34,7 @@
   "09-12-21": {
     "poster_link": "https://rukminim1.flixcart.com/image/416/416/jfea93k0/poster/j/3/u/medium-the-avenges-initiative-3-moives-posters-mp0098-original-imaf3mhpcyhwhtkt.jpeg",
     "event_name": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    "event_type": "Career Counsilling",
+    "event_type": ["Career Counsilling"],
     "event_guest": "Mr. XYZ",
     "ref_link": "https://www.youtube.com/watch?v=Fkk9DI-8el4"
   }
