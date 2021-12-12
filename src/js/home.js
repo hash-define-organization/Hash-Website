@@ -128,26 +128,35 @@ const galleryColumn = document.querySelector('.gallery__flex');
 //update gallery
 
 //moving text gallery-content
-const eventName = document.querySelector('.event-name h2');
 const eventNameWrapper = document.querySelector('.event-name');
+const eventName = document.querySelector('.event-name h2');
 
+const speakerNameWrapper = document.querySelector('.speaker-name');
+const speakerName = document.querySelector('.speaker-name p');
 
 window.addEventListener('load', () => {
 
-    const cardWidth = eventNameWrapper.offsetWidth;
+    const eventNameWrapperWidth = eventNameWrapper.offsetWidth;
     const eventNameWidth = eventName.offsetWidth;
-    const moveWidth = cardWidth - eventNameWidth;
+    const eventNameMoveWidth = eventNameWrapperWidth - eventNameWidth;
+
+    const speakerNameWrapperWidth = speakerNameWrapper.offsetWidth;
+    const speakerNameWidth = speakerName.offsetWidth;
+    const speakerNameMoveWidth = speakerNameWrapperWidth - speakerNameWidth;
      
     console.log("h2:" , eventNameWidth);
-    console.log("card:", cardWidth);
-    console.log("sub:", moveWidth);
+    console.log("h2 wrapper:", eventNameWrapperWidth);
+    console.log("h2 move:", eventNameMoveWidth);
 
-    if(moveWidth > 0) {
+    console.log("p:", speakerNameWidth);
+    console.log("p wrapper:", speakerNameWrapperWidth);
+    console.log("p move:", speakerNameMoveWidth);
 
-    }
+    eventName.style.setProperty('--move-width', `${eventNameMoveWidth}px`);
+    eventName.style.setProperty('--move-duration', `${-(eventNameMoveWidth * 9) / 199}s`);
 
-    eventName.style.setProperty('--move-width', `${moveWidth}px`);
-    eventName.style.setProperty('--move-duration', `${-(moveWidth * 9) / 199}s`);
+    speakerName.style.setProperty('--move-width', `${speakerNameMoveWidth}px`);
+    speakerName.style.setProperty('--move-duration', `${-(speakerNameMoveWidth * 9) / 199}s`);
 });
 
 // for(let index = 0; index >= moveWidth; index--) {
