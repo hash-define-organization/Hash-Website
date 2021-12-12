@@ -6,13 +6,14 @@ body{
     font-size: 1rem;
 
     .master-container {
+        min-height: 80vh;
 
         .master-container__inner {
             display: grid;
             height: auto;
             width: calc(100% - 80px);
             margin: 2rem auto;
-            grid-auto-rows: auto;
+            grid-auto-rows: fit-content;
             gap: 2rem;
 
         }    
@@ -21,8 +22,9 @@ body{
     /*  Custom Scroll Bar YT Like    */
     &::-webkit-scrollbar {
         width: 10px;
+        left: -10px;
     }
-
+    
     &::-webkit-scrollbar-thumb {
         background: #4A4A4A; 
         border-radius: 1em;

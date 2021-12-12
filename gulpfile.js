@@ -3,6 +3,7 @@ const	gulp			= require('gulp'),
 		bourbon			= require('bourbon').includePaths,
 		cssnano			= require('cssnano'),
 		del				= require('del'),
+		gulpCopy		= require('gulp-copy'),
 		imagemin		= require('gulp-imagemin'),
 		postcss			= require('gulp-postcss'),
 		pug				= require('gulp-pug'),
@@ -14,15 +15,13 @@ const	gulp			= require('gulp'),
 /*----- directories -----------------------------------------------*/
 let dir = {
 	src:	'./src/',		// where our source files live
-	dest:	'./build/',		// where we build our files to
+	dest:	'./public/',		// where we build our files to
 };
-
-dir.dest = process.env.NODE_ENV === 'dev' ? './static/' : './build/';
 
 /*----- clobber the build directory -------------------------------*/
 function clean() {
 	return del(
-		['./build/**', '!build/']
+		['./public/**']
 	);
 }
 
@@ -81,6 +80,20 @@ function script() {
 	;
   }
 
+//Gulp Copy Static Assets
+
+const assetsConfig = {
+	src:	dir.src		+ 'assets',
+	watch:	dir.src		+ 'assets',
+	dest:	dir.dest    + 'assets'
+}
+
+function assets() {
+	return gulp
+		.src([`${assetsConfig.src}/**/*`, `!${assetsConfig.src}/images`])
+		.pipe(gulpCopy(assetsConfig.dest, { prefix: 2 }))
+		// .pipe(gulp.dest(assetsConfig.dest));
+}
 
 /*----- process images --------------------------------------------*/
 const imgConfig = {
@@ -120,7 +133,7 @@ function browserSync(done) {
 			baseDir: dir.dest,
 		},
 		// browser:	'msedge developer edition',
-		notify:	true,
+		notify:	false,
 		open: false,
 	});
 	done();
@@ -144,6 +157,7 @@ function watchFiles() {
 		],
 		gulp.series(browserSyncReload)
 	);
+	gulp.watch(assetsConfig.watch, assets);
 	gulp.watch(imgConfig.watch, images);
 }
 
@@ -155,7 +169,7 @@ async function production() {
 
 
 /*----- gulp routines ---------------------------------------------*/
-const build		= gulp.series(gulp.parallel(html, script), gulp.parallel(css, images));
+const build		= gulp.series(clean, gulp.parallel(html, script), gulp.parallel(css, assets));
 const watch		= gulp.parallel(watchFiles, browserSync);
 
 

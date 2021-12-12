@@ -1,21 +1,6 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
-        link(rel="stylesheet", href="main.css")
-        //- script(src="./js/")
-        script(src="./js/theme.js" defer)
-        script(src="./js/home.js" type="module" defer)  
-    body
-        include ../components/header
-        div.master-container
-            include ../components/notification
-            div.master-container__inner
-                include ../components/master
-                include ../components/subscribe
-                include ../components/gallery
-                include ../components/social
-        include ../components/footer
+include ../components/notification
+div.master-container__inner
+    include ../components/master
+    include ../components/subscribe
+    include ../components/gallery
+    include ../components/social

@@ -1,81 +1,103 @@
-const dbBaseUrl = 'https://raw.githubusercontent.com/hash-define-organization/website-update/main/database/';
+const dbBaseUrl = 'https://raw.githubusercontent.com/hash-define-organization/website-update/main/database';
+const notificationsUrl = '/notifications.json';
+const eventsUrl = '/gallery/gallery.json';
 class NotificationManager {
 
-    #notificationHandler = {};
+    messages = null;
+    displayElement = null;
+    messagePlaceholder = null;
+    linkPlaceholder = null;
+    totalCountElement = null;
+    currentCountElement = null;
+    
+    cielCount = null;
+    currentCount = null;
+    totalCount = null;
 
     constructor() {
-        this.notificationSound = new Audio('/assets/sounds/notification.mp3');
+        this.displayElement = document.querySelector('.notification__wrapper');
+        this.messagePlaceholder = document.querySelector('.notification-message');
+        this.linkPlaceholder = document.querySelector('.notification-link__content');
+        this.totalCountElement = document.querySelector('.total-count');
+        this.currentCountElement = document.querySelector('.current-count');
 
-        notificationSound();
-        showNotification();
+        // Event Listeners
+        this.dismissBtn = document.querySelector('#dismissBtn');
+        this.expandBtn = document.querySelector('#expandBtn');
+        this.showNextBtn = document.querySelector('#showNextBtn');
+     
+        this.startWithDelay(1000);
     }
 
-    notificationSound () {
-        const audioElement = document.createElement('audio');
-        audioElement.setAttribute('src', '/assets/sounds/notification.mp3');
-        this.#notificationHandler.sound = audioElement;
+    startWithDelay(time) {
+        setTimeout(() => {
+            this.initNotificationHandler();
+        }, time);
     }
 
-    showNotification() {
-        this.#notificationHandler.sound.play();
+    toggleElementVisibility() {
+        this.displayElement.style.display = this.displayElement.style.display === "none" ? "" : "none";
     }
 
-    async setNotification() {
+    showNotification(count) {
+        this.currentCountElement.innerText = count;
+
+        let message = Object.values(this.messages)[count-1];
+
+        this.messagePlaceholder.innerHTML = message.content;
+    }
+
+    async fetchNotifications() {
         try {
-            this.#notificationHandler.data = await this.fetchNotification();
-            console.log(this.#notificationHandler);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    static setInstance(instance) {
-        this.#notificationHandler.instance = instance;
-        console.log(this.#notificationHandler);
-    }
-
-    async fetchNotification() {
-        try {
-            return await (await fetch(`${dbBaseUrl}notifications.json`)).json();
+            return await (await fetch(`${dbBaseUrl}${notificationsUrl}`)).json();
         } catch (error) {
             console.log("Failed to check for Notifications");
         }
     }
 
-    //show notif
+    async initNotificationHandler() {
+        try {
+            this.messages = await this.fetchNotifications();
+            
+            if(!this.messages) return; 
 
-    //dismiss hotification
+            this.toggleElementVisibility();
+            this.currentCount = this.cielCount = 1;
+            this.totalCount = Object.keys(this.messages).length;
+            this.totalCountElement.innerHTML = `&nbsp;/&nbsp; ${this.totalCount}`;
+            
+            this.showNotification(this.cielCount);
 
+            this.dismissBtn.addEventListener('click', () => {
+                this.toggleElementVisibility();
 
-    // Start Notification Manager after some time on Website
+                this.displayElement.classList.add('notification__wrapper--close');
+            });
 
-    static initNotificationHandler() {
-            setTimeout(() => {
-                NotificationManager.setInstance(new NotificationManager());
-                console.dir(this);
-            }, 0);
+            this.expandBtn.addEventListener('click', () => {
+                console.log("Showing Message!");
+            });
+
+            this.showNextBtn.addEventListener('click', () => {
+                this.cielCount++;
+
+                if(this.cielCount > this.totalCount ) this.cielCount -= this.totalCount;
+
+                this.showNotification(this.cielCount);
+            });
+
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 
-// NotificationManager.initNotificationHandler();
-
-
-function notificationHandler() {
-
-
-
-    const notification = document.querySelector('.notification-dismiss');
-
-    notification.addEventListener('click', () => {
-        const notification = document.querySelector('.notification__wrapper');
-        notification.style.display = "none";    
-    });
-}
+const notificationHandler = new NotificationManager();
 
 // gallery
 
 const galleryWraper = document.querySelector('.gallery__wrapper');
-// const galleryItems = document.querySelectorAll('.gallery__item');
+const galleryItems = document.querySelectorAll('.gallery__item');
 let pos = { top: 0, left: 0, x: 0, y: 0 };
 
 const mouseMoveHandler = function (e) {
@@ -166,7 +188,6 @@ window.addEventListener('load', () => {
 //moving text gallery-content
 
 
-
 // gallery
 
 function emailHandler() {
@@ -214,4 +235,4 @@ function init() {
     console.log("Home page loaded");
 };
 
-emailHandler();
+// emailHandler();
