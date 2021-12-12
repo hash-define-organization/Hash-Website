@@ -43,5 +43,8 @@
   "browserslist": [
     "last 15 versions",
     "> 1%"
-  ]
+  ],
+  "dependencies": {
+    "gulp-copy": "^4.0.1"
+  }
 }

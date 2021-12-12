@@ -27,7 +27,6 @@
             opacity: 0.4;
             background-color: hsl(var(--clr-light) / 0.5);
             border-radius: 5px;
-            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/59615/bg--acrylic-light.png);
             backdrop-filter: blur(15px);
 
             display: flex;
@@ -48,15 +47,21 @@
             }
         }
         
+        // Added to make Images Preload which is not working yet
+        .discord, .whatsapp, .linkedin {
+            background-image: url(/assets/images/social/discord.jpg) url(/assets/images/social/whatsapp.jpg) url(/assets/images/social/linkedin.jpg);
+            background-image: none;
+        }
+
         .discord:hover {
-            background-image: url(https://github.com/hash-define-organization/website-update/raw/main/src/assets/images/social/discord.jpg);
+            background-image: url(/assets/images/social/discord.jpg);
             background-size: cover;
             width: 120%;
             opacity: 1;
         }
 
         .whatsapp:hover {
-            background-image: url(https://github.com/hash-define-organization/website-update/raw/main/src/assets/images/social/whatsapp.jpg);
+            background-image: url(/assets/images/social/whatsapp.jpg);
             background-size: cover;
             width: 120%;
             filter: hue-rotate(-15deg);
@@ -64,7 +69,7 @@
         }
 
         .linkedin:hover {
-            background-image: url(https://github.com/hash-define-organization/website-update/raw/main/src/assets/images/social/linkedin.jpg);
+            background-image: url(/assets/images/social/linkedin.jpg);
             background-size: cover;
             width: 120%;
             opacity: 1;
@@ -73,5 +78,5 @@
         .social-item:not(:last-child) {
             margin-right: 1rem;
         }
-    }
+    }   
 }
