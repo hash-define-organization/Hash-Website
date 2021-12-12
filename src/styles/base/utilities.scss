@@ -32,8 +32,8 @@
     transition: 1s;
 }
 
-a {
-    transition: 100ms ease-in-out;
+a, button {
+    transition: all 200ms ease-in-out;
 }
 
 .tagline:hover{
