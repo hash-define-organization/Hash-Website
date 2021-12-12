@@ -129,14 +129,31 @@ const galleryColumn = document.querySelector('.gallery__flex');
 
 //moving text gallery-content
 const eventName = document.querySelector('.event-name h2');
-const galleryItem = document.querySelector('.gallery__item');
+const eventNameWrapper = document.querySelector('.event-name');
 
-const cardWidth = galleryItem.scrollWidth;
-const eventNameWidth = eventName.scrollWidth;
 
-console.log("h2:" , eventNameWidth);
-console.log("card:", cardWidth);
-console.log("sub:", cardWidth - eventNameWidth);
+window.addEventListener('load', () => {
+
+    const cardWidth = eventNameWrapper.offsetWidth;
+    const eventNameWidth = eventName.offsetWidth;
+    const moveWidth = cardWidth - eventNameWidth;
+     
+    console.log("h2:" , eventNameWidth);
+    console.log("card:", cardWidth);
+    console.log("sub:", moveWidth);
+
+    if(moveWidth > 0) {
+
+    }
+
+    eventName.style.setProperty('--move-width', `${moveWidth}px`);
+    eventName.style.setProperty('--move-duration', `${-(moveWidth * 9) / 199}s`);
+});
+
+// for(let index = 0; index >= moveWidth; index--) {
+
+//     eventName.style.transform = `translateX(${index}px)`;
+// }
 //moving text gallery-content
 
 

@@ -51,14 +51,36 @@
                         overflow: hidden;
                         
                         h2 {
+                            --move-width: 0;
+                            --move-duration: 0;
+                            
                             width: fit-content;
-                            display: inline-block;
+                            display: block;
                             white-space: nowrap;
                             padding: 0 1rem;
+                            margin: 0 auto;
+                            
                             transform: translateX(0);
-                            // overflow: hidden;
-                            // transform: translateX(-50%);
-                            // text-overflow: ellipsis;
+                            animation-name: moveText;
+                            animation-duration: var(--move-duration);
+                            animation-timing-function: linear;
+                            animation-iteration-count: infinite;
+                            animation-direction: alternate;
+                            animation-play-state: paused;
+                            
+                            
+                            &:hover {
+                                animation-play-state: running;
+                            }
+                        }
+
+                        @keyframes moveText {
+                            from {
+                                transform: translateX(0);
+                            }
+                            to {
+                                transform: translateX(var(--move-width));
+                            }
                         }
                     }
                 }
