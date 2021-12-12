@@ -153,7 +153,7 @@ async function production() {
 
 
 /*----- gulp routines ---------------------------------------------*/
-const build		= gulp.series(gulp.parallel(html, script), gulp.parallel(css, images));
+const build		= gulp.series(clean, gulp.parallel(html, script), gulp.parallel(css, images));
 const watch		= gulp.parallel(watchFiles, browserSync);
 
 
