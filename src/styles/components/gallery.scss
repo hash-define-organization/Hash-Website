@@ -28,6 +28,7 @@
                 border-radius: 1rem;
                 z-index: 100;
                 transition: all 1s ease-in-out;
+                border: 1px solid rgba(255, 255, 255, 0.35);
 
                 img {
                     width: var(--item-width);
@@ -151,7 +152,8 @@
 
                 &:hover {
                     transform: scale(1);
-                    
+                    border: 1px solid rgba(255, 255, 255, 0.99);
+
                     .gallery__item-content, .merge-sides {
                         opacity: 1;
                     }
