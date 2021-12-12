@@ -19,11 +19,11 @@
             .gallery__item {
 
                 --item-width: 16rem;
-                --item-height: 24rem;
+                --item-height: 26rem;
 
                 position: relative;
                 width: var(--item-width);
-                height: var(--item-height);
+                height: fit-content;
                 margin: 1rem;
                 cursor: pointer;
                 border-radius: 1rem;
@@ -130,11 +130,18 @@
                         display: flex;
                         flex-direction: row;
                         flex-wrap: wrap;
-                        width: 100%;
+                        width: calc(100% - 2rem);
                         height: 100%;
+                        margin: 0 auto;
+                        margin-top: 2rem;
 
                         p {
                             display: block;
+                            background-color: black;
+                            margin-right: 0.5rem;
+                            margin-top: 0.5rem;
+                            padding: 0.1rem 0.6rem;
+                            border-radius: 1rem;
                         }
                     }
                 }

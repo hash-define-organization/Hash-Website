@@ -152,35 +152,56 @@ const galleryColumn = document.querySelector('.gallery__flex');
 
 //moving text gallery-content
 
-window.addEventListener('load', () => {
-    const eventNameWrapper = document.querySelector('.event-name');
-    const eventName = document.querySelector('.event-name p');
+// window.addEventListener('load', () => {
+//     const eventNameWrapper = document.querySelector('.event-name');
+//     const eventName = document.querySelector('.event-name p');
     
-    const speakerNameWrapper = document.querySelector('.speaker-name');
-    const speakerName = document.querySelector('.speaker-name p');
+//     const speakerNameWrapper = document.querySelector('.speaker-name');
+//     const speakerName = document.querySelector('.speaker-name p');
 
-    const eventNameWrapperWidth = eventNameWrapper.offsetWidth;
-    const eventNameWidth = eventName.offsetWidth;
-    const eventNameMoveWidth = eventNameWrapperWidth - eventNameWidth;
+//     const eventNameWrapperWidth = eventNameWrapper.offsetWidth;
+//     const eventNameWidth = eventName.offsetWidth;
+//     const eventNameMoveWidth = eventNameWrapperWidth - eventNameWidth;
 
-    const speakerNameWrapperWidth = speakerNameWrapper.offsetWidth;
-    const speakerNameWidth = speakerName.offsetWidth;
-    const speakerNameMoveWidth = speakerNameWrapperWidth - speakerNameWidth;
+//     const speakerNameWrapperWidth = speakerNameWrapper.offsetWidth;
+//     const speakerNameWidth = speakerName.offsetWidth;
+//     const speakerNameMoveWidth = speakerNameWrapperWidth - speakerNameWidth;
      
-    console.log("p:" , eventNameWidth);
-    console.log("p wrapper:", eventNameWrapperWidth);
-    console.log("p move:", eventNameMoveWidth);
+//     console.log("p:" , eventNameWidth);
+//     console.log("p wrapper:", eventNameWrapperWidth);
+//     console.log("p move:", eventNameMoveWidth);
 
-    console.log("p:", speakerNameWidth);
-    console.log("p wrapper:", speakerNameWrapperWidth);
-    console.log("p move:", speakerNameMoveWidth);
+//     console.log("p:", speakerNameWidth);
+//     console.log("p wrapper:", speakerNameWrapperWidth);
+//     console.log("p move:", speakerNameMoveWidth);
 
-    eventName.style.setProperty('--move-width', `${eventNameMoveWidth}px`);
-    eventName.style.setProperty('--move-duration', `${-(eventNameMoveWidth * 9) / 199}s`);
+//     eventName.style.setProperty('--move-width', `${eventNameMoveWidth}px`);
+//     eventName.style.setProperty('--move-duration', `${-(eventNameMoveWidth * 9) / 199}s`);
 
-    speakerName.style.setProperty('--move-width', `${speakerNameMoveWidth}px`);
-    speakerName.style.setProperty('--move-duration', `${-(speakerNameMoveWidth * 9) / 199}s`);
-});
+//     speakerName.style.setProperty('--move-width', `${speakerNameMoveWidth}px`);
+//     speakerName.style.setProperty('--move-duration', `${-(speakerNameMoveWidth * 9) / 199}s`);
+// });
+
+window.addEventListener('load', infiniteScrollHandler());
+
+function infiniteScrollHandler() {
+
+    console.log("Scroll Handler");
+
+    document.querySelectorAll('.infinite-scroll__wrapper').forEach( (element) => {
+            
+        const scrollWrapper = element;
+        const scrollingElement = element.children[0];
+
+        const scrollWrapperWidth = scrollWrapper.offsetWidth;
+        const scrollingElementWidth = scrollingElement.offsetWidth;
+
+        const elementNetOffsetWidth = scrollWrapperWidth - scrollingElementWidth;
+
+        scrollingElement.style.setProperty('--move-width', `${elementNetOffsetWidth}px`);
+        scrollingElement.style.setProperty('--move-duration', `${-(elementNetOffsetWidth * 9) / 199}s`);
+    });
+}
 
 // for(let index = 0; index >= moveWidth; index--) {
 
