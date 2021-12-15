@@ -1,5 +1,6 @@
-{
-  "05-12-21": {
+[
+  {
+    "date": "05-12-21",
     "poster_link": "https://rukminim1.flixcart.com/image/416/416/jfea93k0/poster/j/3/u/medium-the-avenges-initiative-3-moives-posters-mp0098-original-imaf3mhpcyhwhtkt.jpeg",
     "event_name": "Avengers Initiative 3",
     "event_type": ["Career Counsilling", "lmao", "ded"],
@@ -7,7 +8,8 @@
     "ref_link": "https://www.youtube.com/watch?v=Fkk9DI-8el4"
   },
 
-  "06-12-21": {
+  {
+    "date": "06-12-21",
     "poster_link": "https://rukminim1.flixcart.com/image/416/416/jfea93k0/poster/j/3/u/medium-the-avenges-initiative-3-moives-posters-mp0098-original-imaf3mhpcyhwhtkt.jpeg",
     "event_name": "Avengers Initiative 3",
     "event_type": ["Career Counsilling", "lmao", "ded"],
@@ -15,7 +17,8 @@
     "ref_link": "https://www.youtube.com/watch?v=Fkk9DI-8el4"
   },
 
-  "07-12-21": {
+  {
+    "date": "07-12-21",
     "poster_link": "https://rukminim1.flixcart.com/image/416/416/jfea93k0/poster/j/3/u/medium-the-avenges-initiative-3-moives-posters-mp0098-original-imaf3mhpcyhwhtkt.jpeg",
     "event_name": "Avengers Initiative 3",
     "event_type": ["Career Counsilling", "lmao", "ded"],
@@ -23,7 +26,8 @@
     "ref_link": "https://www.youtube.com/watch?v=Fkk9DI-8el4"
   },
 
-  "08-12-21": {
+  {
+    "date": "08-12-21",
     "poster_link": "https://rukminim1.flixcart.com/image/416/416/jfea93k0/poster/j/3/u/medium-the-avenges-initiative-3-moives-posters-mp0098-original-imaf3mhpcyhwhtkt.jpeg",
     "event_name": "Avengers Initiative 3",
     "event_type": ["Career Counsilling", "lmao", "ded"],
@@ -31,7 +35,8 @@
     "ref_link": "https://www.youtube.com/watch?v=Fkk9DI-8el4"
   },
 
-  "09-12-21": {
+  {
+    "date": "09-12-21",
     "poster_link": "https://rukminim1.flixcart.com/image/416/416/jfea93k0/poster/j/3/u/medium-the-avenges-initiative-3-moives-posters-mp0098-original-imaf3mhpcyhwhtkt.jpeg",
     "event_name": "Avengers Initiative 3",
     "event_type": ["Career Counsilling", "lmao", "ded"],
@@ -39,11 +44,12 @@
     "ref_link": "https://www.youtube.com/watch?v=Fkk9DI-8el4"
   },
 
-  "10-12-21": {
+  {
+    "date": "10-12-21",
     "poster_link": "https://rukminim1.flixcart.com/image/416/416/jfea93k0/poster/j/3/u/medium-the-avenges-initiative-3-moives-posters-mp0098-original-imaf3mhpcyhwhtkt.jpeg",
     "event_name": "Avengers Initiative 3",
     "event_type": ["Career Counsilling", "lmao", "ded"],
     "event_guest": "Mr. XYZ",
     "ref_link": "https://www.youtube.com/watch?v=Fkk9DI-8el4"
   }
-}
+]
