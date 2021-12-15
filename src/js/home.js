@@ -142,7 +142,7 @@ const mouseDownHandler = (e) => {
 galleryWraper.addEventListener('mousedown', mouseDownHandler);
 
 //update gallery
-(async function updateGallery() {
+const updateGallery = async function() {
 
     // console.log("Updating Gallery");
 
@@ -178,7 +178,9 @@ galleryWraper.addEventListener('mousedown', mouseDownHandler);
 
     });
 
-})();
+};
+window.onload(updateGallery());
+
 //update gallery
 
 window.addEventListener('load', infiniteScrollHandler());
