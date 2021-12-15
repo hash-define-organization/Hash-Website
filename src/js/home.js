@@ -146,7 +146,37 @@ galleryWraper.addEventListener('mousedown', mouseDownHandler);
 
     // console.log("Updating Gallery");
 
-    
+    const galleryWrapperFlex = document.querySelector('.gallery__flex');
+    const events = await (await fetch(`https://raw.githubusercontent.com/hash-define-organization/website-update/main/database/events.json`)).json();
+
+    events.forEach( (event) => {
+
+        let eventTags = ``;
+
+        event.event_type.forEach((tag) => {
+            eventTags += `<p>${tag}</p>`;
+        })
+        
+        const eventCardHTML = `
+        <div class="gallery__item">
+            <img src="${event.poster_link}" />
+            <div class="gallery__item-content">
+                <div class="event-name merge-sides infinite-scroll__wrapper">
+                    <p class="infinite-scroll">${event.event_name}</p>
+                </div>
+                <div class="speaker-name merge-sides infinite-scroll__wrapper">
+                    <p class="infinite-scroll">${event.event_guest}</p>
+                </div>
+                <div class="event-tag">
+                    ${eventTags}
+                </div>
+            </div>
+        </div>
+        `;
+
+        galleryWrapperFlex.innerHTML += eventCardHTML;
+
+    });
 
 })();
 //update gallery
