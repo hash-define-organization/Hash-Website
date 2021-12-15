@@ -10,10 +10,11 @@
         padding: 2rem;
         box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
         border: 1px solid rgba(255, 255, 255, 0.35);
-        opacity: 0.4;
+        opacity: 0.6;
         background-color: hsl(var(--clr-light) / 0.5);
         border-radius: 5px;
         backdrop-filter: blur(15px);
+        transition: all 0.3s ease-in-out;
 
         .subscribe-promotion__title {
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -31,7 +32,7 @@
             justify-content: center;
             margin: 1.5rem 0;
             position: relative;
-            opacity: 0.9;
+            // opacity: 0.9;
 
             .subscribe__form--email {
                 height: 3rem;
@@ -50,7 +51,9 @@
                 border: none;
                 padding: 0.5rem;
                 border-radius: 0.2em;
+                opacity: 0.5;
                 cursor: pointer;
+                // transition: all 0.2s ease-in-out;
 
                 &:hover {
                     opacity: 1;
