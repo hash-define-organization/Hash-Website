@@ -77,4 +77,46 @@
             width: 30%;
         }
     }
+
+    .bottom-container-v {
+        display: inline-flex;
+        // flex-wrap: wrap;
+        height: fit-content;
+        
+        .text-holder {
+            color: hsl(var(--clr-accent));
+            // margin: 0 2rem;
+            width: 70%;
+            height: fit-content;
+            // flex: 1;
+            // display: inline-block;
+            
+            p {
+                // font-size: 1.2rem;
+                margin: 1rem;
+                line-height: 2rem;
+                width: 100%;
+                text-align: justify;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .image-holder {
+            // margin-left: 4rem;
+            width: 20%;
+            height: auto;
+            img {
+                // width: 100%;
+                // height: min-content;
+                object-fit: cover;
+                height: auto;
+
+            }
+            // transform: scale(1.3);
+        }
+    }
 }

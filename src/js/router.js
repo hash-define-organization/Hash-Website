@@ -53,7 +53,7 @@ class Router {
             
             //Purify Path
             let viewPath = this.views[path] === undefined ? '/error' : path;
-            
+
             //Fetch Content if not present
             let viewContent = this.views[viewPath] === '' ? await this.getView(this.routes[viewPath].view) : this.views[viewPath];
             
@@ -73,9 +73,9 @@ class Router {
     setRoutes() {
         return {
             '/': {
-                view: 'home',
+                view: 'about',
                 title: `${this.globalTitle}`,
-                scripts: ['home'],
+                scripts: [''],
             },
             '/events': {
                 view: 'events',
