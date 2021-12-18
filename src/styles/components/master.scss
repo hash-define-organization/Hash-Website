@@ -22,6 +22,10 @@
         flex-wrap: wrap;
         overflow: hidden;
 
+        h2 {
+            font-size: 2.5rem;
+        }
+
         p {
             color: hsl(var(--clr-accent));
             text-align: justify;
