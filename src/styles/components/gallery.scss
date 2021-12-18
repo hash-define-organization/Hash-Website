@@ -44,15 +44,16 @@
                     width: inherit;
                     min-height: calc(var(--item-height) / 2 - 3rem);
                     opacity: 0;
-                    transition: all 0.5s ease-in-out;
+                    transition: all 1s ease-in-out;
                     z-index: 102;
                     color: hsl(var(--clr-accent)/.7);
 
                     .merge-sides {
                         opacity: 0;
-                        transition: ease-in-out 0.5s;
+                        transition: all 1s ease-in-out;
 
                         &::before, &::after {
+                            opacity: 0;
                             position: absolute;
                             content: "";
                             bottom: 0;
@@ -60,6 +61,7 @@
                             z-index: 1;
                             width: 16px;
                             height: auto;
+                            transition: all 0s;
                         }
 
                         &::before {
@@ -82,7 +84,7 @@
                         p {
                             --move-width: 0;
                             --move-duration: 0;
-                            
+
                             animation-duration: var(--move-duration);
                         }
 
@@ -93,6 +95,7 @@
                             display: block;
                             width: fit-content;
                             white-space: nowrap;
+                            padding: 0 1rem;
       
                             transform: translateX(0);
                             animation-name: moveText;
@@ -120,7 +123,6 @@
                     .event-name {
                         width: calc(100% - 4px);
                         margin: 0 auto;
-                        padding: 0 1rem;
                         font-size: 1.5rem;
                         color: whitesmoke;
                         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -129,7 +131,6 @@
                     .speaker-name {
                         display: block;
                         float: right;
-                        padding: 0 0.5rem;
                         max-width: 150px;
                         margin-right: 1rem;
                     }
@@ -177,8 +178,17 @@
                         }
                     }
 
-                    .gallery__item-content, .merge-sides {
+                    .gallery__item-content {
                         opacity: 1;
+                    }
+                    
+                    .merge-sides {
+                        opacity: 1;
+
+                        &::before, &::after {
+                            opacity: 1;
+                            transition: all 2s cubic-bezier(1,.01,1,1.15);
+                        }
                     }
                 }
 
@@ -191,10 +201,9 @@
                     width: 100%;
                     height: 100%;
                     border-radius: inherit;
-                    // background: linear-gradient(360deg, rgba(2,0,36,1) 0%, #9892ed 30%, rgba(0,212,255,0.5) 50%, transparent 51%, transparent 100%);
                     background: linear-gradient(to bottom, rgba(4,8,15,0) 0%, rgba(4,8,15,0) 30%, #181818 65%, #181818 100%);
                     opacity: 0;
-                    transition: ease-in-out 0.5s;
+                    transition: all 1s ease-in-out;
                     z-index: 101;
                 }
 
@@ -203,8 +212,7 @@
                     position: absolute;
                     border-radius: inherit;
                     opacity: 1;
-                    // background: linear-gradient(360deg, rgba(2,0,36,1) 0%, #9892ed 30%, rgba(0,212,255,0.5) 50%, transparent 51%, transparent 100%);
-                    // background: linear-gradient(to bottom, rgba(4,8,15,0), #192133), #192133));
+                    transition: all 1s ease-in-out;
                     top: 0;
                     left: 0;
                     bottom: 0;
