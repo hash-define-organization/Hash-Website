@@ -73,9 +73,9 @@ class Router {
     setRoutes() {
         return {
             '/': {
-                view: 'about',
+                view: 'home',
                 title: `${this.globalTitle}`,
-                scripts: [''],
+                scripts: ['home'],
             },
             '/events': {
                 view: 'events',

@@ -3,15 +3,20 @@
         .logo-wrapper
             div.headline.uppercase.shimmer #Define &nbsp;&nbsp;&nbsp;&nbsp;
     .right-container
-        .navigationBar
-                 .navBtn__wrapper
-                    a(href="/" data-link).navBtn__link Home
-                 .navBtn__wrapper
-                    a(href="/events" data-link).navBtn__link Events
-                 .navBtn__wrapper
-                    a(href="/team" data-link).navBtn__link Team
-                 .navBtn__wrapper
-                    a(href="/about" data-link).navBtn__link About Us
+        .navigationBar-desktop
+            .navBtn__wrapper
+                a(href="/" data-link).navBtn__link Home
+            .navBtn__wrapper
+                a(href="/events" data-link).navBtn__link Events
+            .navBtn__wrapper
+                a(href="/team" data-link).navBtn__link Team
+            .navBtn__wrapper
+                a(href="/about" data-link).navBtn__link About Us
+        .navigationBar-mobile 
+            .navBtn__wrapper
+                span.line
+                span.line
+                span.line
         .theme-switch
             .switch-wrapper
                 button#theme-toggle(aria-label='')
