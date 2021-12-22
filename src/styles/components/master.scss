@@ -1,10 +1,41 @@
 .master-view { 
-    position: relative;
     display: flex;
     height: fit-content;
     justify-content: center;
     align-items: center;
     padding: 0 40px;
+    font-family: "Segoe UI Variable Display","Segoe UI","Inter",sans-serif;
+    position: relative;
+
+    canvas {
+        border-radius: 5px;
+        inset-inline-end: 0;
+        inset-block-end: 0;
+        z-index: -1;
+        // margin: 0rem -40px 0 -40px;
+        width: 100%;
+        // min-width: 100vw;
+        height: 100%;
+        mask: url("/assets/images/hero-mask.png") bottom right/cover no-repeat;
+        animation: canvas-hue-rotate 15s infinite linear;
+        --gradient-color-1: #50dc6f;
+        --gradient-color-2: #00d6ba;
+        --gradient-color-3: #0390e2;
+        --gradient-color-4: var(--background);
+    
+        @media (prefers-color-scheme: light) {
+            opacity: 0.5;
+        }
+    
+        @media only screen and (max-width: 1024px) {
+            width: 100%;
+        }
+    
+        @media only screen and (max-width: 648px) {
+            height: 60vh;
+            mask-size: 100% 100%;
+        }
+    }
 
     .bg-gradient {
         position: absolute;
@@ -12,28 +43,50 @@
         transform: scale(0.5);
     }
 
-    .left-sec {
-        display: flex;
-        width: 40%;
-        height: 100%;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        overflow: hidden;
+    .display-content {
+        display: grid;
+        position: absolute;
+        margin: 0 40px;
+        // padding: 20px 10px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        gap: 24px;
+        grid-template-columns: 1fr 1fr;
+        font-size: 4rem;
 
-        h2 {
-            font-size: 2.5rem;
+        .element {
+            font-weight: 600;
         }
+
+        p {
+            font-size: 1.5rem;
+            color: hsl(var(--clr-accent));
+        }
+
+        .menu {
+            grid-row: 1 / span 2;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            margin: auto;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            background: rgba( 255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 10.5px );
+            border-radius: 5px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
+    }
+
+    .left-sec {
+        position: absolute;
 
         p {
             color: hsl(var(--clr-accent));
             text-align: justify;
             text-justify: inter-word;
         }
-    }
-
-    .right-sec { 
-        width: 60%;
     }
 }
