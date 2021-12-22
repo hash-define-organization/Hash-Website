@@ -16,6 +16,11 @@
 
     /*     Font Color       */
     --clr-white: 0 0% 100%;
+
+    // Scroll
+    --mica-tint: 0,0%,13%;;
+    --mica-tint-opacity: 0.8;
+    --control-strong-color-default: hsla(0,0%,100%,.545);;
 }
 
 .theme--light {
@@ -28,7 +33,7 @@
 }
 
 .theme--dark {
-    --background: black;
+    --background: #111111;
     --foreground: white;
     --clr-accent: 231 77% 90%;
     --clr-hover: 230 35% 7%;
