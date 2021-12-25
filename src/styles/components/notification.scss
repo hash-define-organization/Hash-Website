@@ -79,6 +79,7 @@
         
         .notification-count {
             display: flex;
+            width: max-content;
             align-items: center;
             justify-content: center;
             height: 1.5rem;
@@ -98,6 +99,7 @@
         white-space: nowrap;
         overflow: hidden;
         color: var(--clr-dark);
+        text-overflow: ellipsis;
     }   
 
     .right-container {
