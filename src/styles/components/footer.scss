@@ -4,80 +4,52 @@
     
     .footer-wrapper {
         
-        display: grid;
-        margin: 1rem auto;
-        width: calc(100% - 80px);
-        grid-template-columns: 6rem auto;
+        display: flex;
+        flex-direction: row;
         
         .left-sec {
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            width: 100%;
 
-            img {
-
-                height: 5rem;
-                width: 5rem;
-                display: inline-block;
-            }
-
-            p {
-                margin: 0.5rem 0;
-                font-size: var(--fs-100);
-                font-weight: 300;
-            }
-        }
-
-        .right-sec {
-            
-            display: grid;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
-            grid-auto-flow: row;
-            margin-left: 2rem;
-
-            .footer-links {   
-                
-                grid-row: 1/3;
+            .footer-links{
                 display: flex;
+                flex-direction: row;
                 flex-wrap: wrap;
 
                 .footer-link {
-                    
-                    display: block;
-                    margin-right: 0.8rem;
-                    margin-left: 0.8rem;
-                    color: hsl( var(--clr-accent) / 0.7 );
-                    
-                    a {
-                        font-size: var(--fs-400);
-                        text-decoration: none;
-                        color: inherit;
 
+                    margin: 1rem;                    
+
+                    a {
+                        text-decoration: none;
+                        color: hsl(var(--clr-accent) / 0.7);
+                        cursor: pointer;
+                        
                         &:hover {
                             color: hsl(var(--clr-accent));
                         }
                     }
-
                 }
             }
+        }
+
+        .right-sec {
+
+            width: 100%;
+            margin: 0 0.7rem;
 
             .footer-miscs {
-                grid-row: 4/5;
+
                 display: flex;
+                flex-direction: row;
                 justify-content: flex-end;
-                align-items: center;    
-                font-size: var(--fs-200);
+                flex-wrap: wrap;
 
                 .footer-misc {
-                    display: inline-block;
-                    margin-right: 0.5rem;
-                    margin-left: 0.5rem;
+
+                    margin: 1rem 0.3rem;
                 }
             }
-
-            
         }
     }
 }

@@ -90,8 +90,8 @@
                             --move-width: 0;
                             --move-duration: 0;
     
-                            display: block;
-                            width: fit-content;
+                            display: inline-block;
+                            // width: fit-content;
                             white-space: nowrap;
                             padding: 0 1rem;
       
@@ -116,7 +116,15 @@
                                 }
                             }
                         }
+
+                        .no-move {
+                            padding: 0;
+                            margin: 0;
+                            display: flex;
+                            justify-content: center;
+                        }
                     }
+
 
                     .event-name {
                         width: calc(100% - 4px);
@@ -129,7 +137,7 @@
                     .speaker-name {
                         display: block;
                         float: right;
-                        max-width: 150px;
+                        // max-width: 150px;
                         margin-right: 1rem;
                     }
 
