@@ -105,20 +105,22 @@
                             overflow: hidden;
                          
                             p {
+                                
                                 --move-width: 0;
                                 --move-duration: 0;
-    
+                                
                                 animation-duration: var(--move-duration);
                             }
-    
+                            
                             .infinite-scroll {
                                 --move-width: 0;
                                 --move-duration: 0;
-        
+                                
                                 display: block;
                                 width: fit-content;
                                 white-space: nowrap;
                                 padding: 0 1rem;
+                                font-size: calc(var(--item-width) / 15);
           
                                 transform: translateX(0);
                                 animation-name: moveText;
@@ -176,6 +178,7 @@
                                 border-radius: 1rem;
                                 backdrop-filter: blur(15px);
                                 background-color: hsl(231 77% 90%/.5);
+                                font-size: calc(var(--item-width) / 25);
                                 border: 1px solid hsla(0,0%,100%,.35);
                                 border-radius: 5px;
                                 -webkit-box-shadow: 0 1.6px 3.6px 0 rgb(0 0 0 / 13%), 0 0.3px 0.9px 0 rgb(0 0 0 / 11%);
