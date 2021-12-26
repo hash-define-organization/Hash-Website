@@ -17,20 +17,6 @@ body{
             gap: 2rem;
         }    
     }
-
-    &::placeholder {
-        color: #cbc2b6;
-    }
-    input:-webkit-autofill,
-    textarea:-webkit-autofill,
-    select:-webkit-autofill {
-        background-color: #5a6100 !important;
-        color: #ffffff !important;
-    }
-    
-
-    /*  Custom Scroll Bar YT Like    */
-    
 }
 
 .scroller {
