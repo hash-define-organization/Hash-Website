@@ -41,7 +41,7 @@
 
 
                 .gallery__item {
-                    --item-width: calc(calc(100vw - 20rem) / 4);
+                    --item-width: 18rem;
                     --item-height: calc(1.45 * var(--item-width));
     
                     position: relative;
@@ -247,7 +247,18 @@
                         width: 100%;
                         // transform: scale(1.1);
                     }
+                    
+                    @media screen and (max-width: 1680px){
+                        
+                        --item-width: 18rem;
+                    }
+
+                    @media screen and (max-width: 1280px){
+                        
+                        --item-width: 14rem;
+                    }
                 }
+
             }
         }
     }
