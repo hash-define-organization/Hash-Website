@@ -70,12 +70,10 @@ I am writing down the Dependencies for beginners, so that they can look into it 
 Rohan Gupta:
 * [Twitter](https://twitter.com/WINOFFRG)
 * [Medium](https://winoffrg.medium.com/)
-<!-- * [Gmail](dhairyabahl5@gmail.com) -->
 * [LinkedIn](https://www.linkedin.com/in/winoffrg/)
 
 Achit Jain: 
 * [Twitter](https://twitter.com/j_achit)
-<!-- * [Medium](https://medium.com/@dhairyabahl5) -->
 * [Gmail](ajain2801@gmail.com)
 * [LinkedIn](https://www.linkedin.com/in/achitj)
 
