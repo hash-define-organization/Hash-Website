@@ -1,55 +1,118 @@
-.footer {
-    border-top: 1px solid hsl(var(--clr-accent) / 0.4);
-    color: hsl(var(--clr-accent));
-    
-    .footer-wrapper {
-        
+@import 'breakpoints';
+
+.footer{
+    padding-top: 1rem;
+    background-color: #151414;
+}
+.contact{
+    @include md{
         display: flex;
-        flex-direction: row;
-        
-        .left-sec {
-
-            width: 100%;
-
-            .footer-links{
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-
-                .footer-link {
-
-                    margin: 1rem;                    
-
-                    a {
-                        text-decoration: none;
-                        color: hsl(var(--clr-accent) / 0.7);
-                        cursor: pointer;
-                        
-                        &:hover {
-                            color: hsl(var(--clr-accent));
-                        }
-                    }
-                }
+        justify-content: space-around;
+    }
+}
+.contact-box{
+    margin-bottom: 1rem;
+    .icon{
+        display: inline-block;
+        width: 4rem;
+    }
+    
+    .info{
+        display: inline-block;
+        .title{
+            &:hover{
+                color: rgb(221, 183, 13)
+            }
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            @include md{
+                font-size: 1.4rem
             }
         }
-
-        .right-sec {
-
-            width: 100%;
-            margin: 0 0.7rem;
-
-            .footer-miscs {
-
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-end;
-                flex-wrap: wrap;
-
-                .footer-misc {
-
-                    margin: 1rem 0.3rem;
-                }
+        .subtitle{
+            color: gray;
+            text-decoration: none;
+            font-size: 0.8rem;
+            @include md{
+                font-size: 1rem
             }
         }
     }
+}
+
+//social media section style
+.footer-sm{
+    background-color: #212121;
+    justify-content: center;
+    align-items: center;
+    @include md{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+.left-sec{
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+.right-sec{
+    justify-content: center;
+    display: flex;
+}
+i{
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    &:hover{
+        color: rgb(221, 183, 13)
+    }
+}
+
+//link section style
+.footer-links{
+    @include md{
+        display: flex;
+        justify-content: space-around;
+    }
+    padding: 1rem;
+}
+.section{
+    display: inline-block;
+    padding: 1rem;
+    p{
+        color: white;
+        @include lg{
+            width: 500px;
+        }
+    }
+    h3{
+        color: white;
+        font-weight: 500;
+    }
+    hr{
+        background-color: gray;
+        margin: 0.5rem 0.5rem 2rem 0.5rem;
+        width: 80px;
+        height: 2px;
+    }
+    a{
+        &:hover{
+            color: rgb(221, 183, 13)
+        }
+        color: white;
+        text-decoration: none;
+        display: block;
+    }
+}
+
+
+//copyright section style
+.footer-copyright{
+    background-color: black;
+}
+.copyright{
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
 }

@@ -1,22 +1,83 @@
-.footer
-    .footer-wrapper
-        .left-sec
-            .footer-links
-                .footer-link  
-                    a(href="#") About Us 
-                .footer-link  
-                    a(href="#") Contact Us 
-                .footer-link  
-                    a(href="#") Subscribe 
-                .footer-link  
-                    a(href="#") Team 
-                .footer-link  
-                    a(href="#") Sponsors
+.footer   
+    .contact 
+        //- content for the mobile number
+        .contact-box 
+            .icon 
+                svg(xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none" stroke-linecap="round" stroke-linejoin="round")
+                    path(stroke="none" d="M0 0h24v24H0z" fill="none")
+                    path(d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2")
+                    path(d="M15 7a2 2 0 0 1 2 2")
+                    path(d="M15 3a6 6 0 0 1 6 6") 
+            .info 
+                a(href="").title +91 9876543210
+                p.subtitle Mon-Fri 9am-6pm   
+
+        //- content for the email address
+        .contact-box 
+            .icon 
+                svg(xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-opened" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffbf00" fill="none" stroke-linecap="round" stroke-linejoin="round")
+                    path(stroke="none" d="M0 0h24v24H0z" fill="none")
+                    polyline(points="3 9 12 15 21 9 12 3 3 9" )
+                    path(d="M21 9v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" )
+                    line(x1="3" y1="19" x2="9" y2="13" )
+                    line(x1="15" y1="13" x2="21" y2="19")
+            .info 
+                a(href="").title hashdefine@gmail.com
+                p.subtitle online support     
+
+    //- links to social media            
+    .footer-sm  
+        .left-sec connect with us on social media
         .right-sec
-            .footer-miscs
-                .footer-misc 
-                    p Copyright © 2021
-                .footer-misc 
-                    p •
-                .footer-misc
-                    p Made with ❤️ by Define Code Team  
+            .sm-icon  
+                a(href="#") 
+                    i.fab.fa-facebook-square
+            .sm-icon  
+                a(href="#")
+                    i.fab.fa-github-square
+            .sm-icon  
+                a(href="#")
+                    i.fab.fa-linkedin
+            .sm-icon  
+                a(href="#") 
+                    i.fab.fa-twitter-square
+            .sm-icon  
+                a(href="#") 
+                    i.fab.fa-whatsapp-square      
+            .sm-icon  
+                a(href="#") 
+                    i.fab.fa-youtube
+            .sm-icon  
+                a(href="#") 
+                    i.fab.fa-discord 
+
+    //-important links
+    .footer-links 
+        .section
+            h3  #DEFINE community
+            hr
+            p #define represents 400+ individuals who believe in the power of learning by doing and the importance of an active Coding Community.
+        .section
+            h3 Useful Links
+            hr
+            .links 
+                a(href="#" ) Home
+                a(href="#") Contact Us 
+                a(href="#" ) About Us  
+                a(href="#" ) Team  
+        .section
+            h3 Join Us 
+            hr
+            .links 
+                a(href="#") Events
+                a(href="#") Open Source
+                a(href="#" ) Subscribe 
+                a(href="#") Volunteer
+                a(href="#") Sponsor
+
+            
+
+    //-copyright info    
+    .footer-copyright 
+            .copyright
+                p Copyright © 2021 • Made with ❤️ by Define Code Team 
