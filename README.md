@@ -16,6 +16,49 @@ The Hash Define Official Website is made using PUG, SCSS, VanillaJS and Gulp.
 
 This Repository is created with a motive to guide beginners with the open-source and improve their Web Development Fundamentals while learning new technologies. I have already created some issues for the beginners so that they can work on them and even make there first contribution in this repository.
 
+# 🌟Getting started
+
+#### :dart: Let's celebrate [Hacktoberfest](https://hacktoberfest.com/) by getting involved in the open source community and start your journey in open source.
+#### :dart: We at   [Hash Define](https://hashdefinebpit.netlify.app) aim to build a platform that will not only encourage you to find which domain interests you but will also help you to come forward and gain expertise in that.
+
+
+
+<p align="center">
+  <!-- <img src="https://i.ibb.co/NxXxwHX/define-logo.jpg" alt="define-logo" border="0"></a> -->
+  
+![image](https://user-images.githubusercontent.com/96205648/193408591-1c9cf31d-b6c8-49ba-9ee4-f9bf832cf686.png)
+
+</p>
+
+
+<!-- <p align="center">
+  <a><img src="https://qph.fs.quoracdn.net/main-qimg-82b7314fe96c4a2d8f3088207a4afd8d" alt="define" width="500"></a>
+  <br>
+  <br> -->
+
+
+## :label: Participation Rules 📝
+
+➡️ Pull requests can be made to any public repository on GitHub, look for the "hacktoberfest" topic to know whether the project is participating or not. The pull request must contain commits you made yourself. 
+
+➡️ If a maintainer reports your pull request as 🔴<b> spam </b>, it will not be counted towards your participation in Hacktoberfest.
+
+➡️ If a maintainer reports behavior that’s not in line with the project’s code of conduct, you will be ineligible to participate.
+
+
+##  :label:  Rules Regarding Submission of PR :bookmark:
+➡️ Participant can contribute anything he wishes for.
+
+➡️ Make sure to pull request in the respective folder. 
+
+➡️ Your <b>PR</b> must be valid.
+
+➡️ Don't just copy and paste code from other website/blogs .
+
+➡️ Submitting someone else work will be reported as 🔴spam.
+
+➡️ Please read [contributing.md](/Contributing.md) for details about the process for submitting pull requests to us.
+
 # Instructions
 
 You can view the deployed version of this project on: https://hashdefine.vercel.app/
@@ -86,8 +129,11 @@ Give a ⭐ if you like this web-app.
 ## 1. I am a beginner with open source or with react can I contribute in this repository ?
 Anybody can contribute to this project. Just take an issue, give your ideas, work on the issue and I am always here to guide you throughout the process ❤ .
 
-## 2. What are the steps to make my first contribution ?
-Kindly refer to the [contributing.md](/Contributing.md) file. All the contributing guidelines are written over there.
-
 ## 3. Is there any need to assign myself to the issue before starting to work on the issue ?
 It is better to wait until you are assigned to the issue. Although if you are make sure that no-one is working on the issue then you can start working on the issue.
+
+ ## 	:game_die: Shoutout to all the contributors ❤️
+
+<a href="https://github.com/hash-define-organization/Hash-Website/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=hash-define-organization/Hash-Website" />
+</a>
