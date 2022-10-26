@@ -11,6 +11,7 @@
     }
 }
 .hackathon-text{
+    justify-content: center;
     padding: 1rem;
     text-align: center;
     @include lg{
@@ -39,7 +40,7 @@
         }
         .subtitle{
             &:hover{
-                color: rgb(221, 183, 13)
+                color: rgb(1,167,227)
             }
             color: gray;
             
@@ -75,7 +76,7 @@ i{
     font-size: 1.5rem;
     padding: 0.5rem;
     &:hover{
-        color: rgb(221, 183, 13)
+        color: rgb(1,167,227)
     }
 }
 
@@ -108,7 +109,7 @@ i{
     }
     a{
         &:hover{
-            color: rgb(221, 183, 13)
+            color:rgb(1,167,227)
         }
         color: white;
         text-decoration: none;

@@ -83,7 +83,7 @@ I am writing down the Dependencies for beginners, so that they can look into it 
 
 2. Clone the Forked Repository to your local machine.
 	```
-	git clone https://github.com/<your GitHub user name>/website-update.git
+	git clone https://github.com/<your GitHub user name>/Hash-Website.git
 	```
 
 3. Change the directory to website-update.
@@ -93,8 +93,8 @@ I am writing down the Dependencies for beginners, so that they can look into it 
 
 4. Add remote to the Original Repository.
 	```
-	git add remote https://github.com/hash-define-organization/Hash-Whiteboard.git
-	```
+	git add remote https://github.com/hash-define-organization/Hash-Website.git
+	```d
 
 5. Install the dependecies.
 	```node
@@ -129,7 +129,7 @@ Give a ⭐ if you like this web-app.
 ## 1. I am a beginner with open source or with react can I contribute in this repository ?
 Anybody can contribute to this project. Just take an issue, give your ideas, work on the issue and I am always here to guide you throughout the process ❤ .
 
-## 3. Is there any need to assign myself to the issue before starting to work on the issue ?
+## 2. Is there any need to assign myself to the issue before starting to work on the issue ?
 It is better to wait until you are assigned to the issue. Although if you are make sure that no-one is working on the issue then you can start working on the issue.
 
  ## 	:game_die: Shoutout to all the contributors ❤️
