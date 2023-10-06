@@ -82,7 +82,7 @@ I am writing down the Dependencies for beginners, so that they can look into it 
 
 1. Fork the Repository
 
-	<img width="72" alt="image" src="https://user-images.githubusercontent.com/71627983/151713658-7e9576d0-f373-4e6a-a60a-e3d58b3b38c8.png">
+	[<img width="72" alt="image" src="https://user-images.githubusercontent.com/71627983/151713658-7e9576d0-f373-4e6a-a60a-e3d58b3b38c8.png">](https://github.com/hash-define-organization/Hash-Website/fork)
 
 2. Clone the Forked Repository to your local machine.
 	```
